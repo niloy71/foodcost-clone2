@@ -1,0 +1,2 @@
+plot evolution of discounts as % of revenue given per week for each shop
+plot evolution of points de fidelite as % of revenue given per week for each shop

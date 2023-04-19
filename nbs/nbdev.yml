@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "foodcosts"
+  site-url: "https://fonteyne.github.io/foodcosts"
+  description: "Foodcosts in shops"
+  repo-branch: main
+  repo-url: "https://github.com/fonteyne/foodcosts"

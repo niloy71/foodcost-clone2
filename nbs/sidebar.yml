@@ -1,0 +1,21 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 00_core.ipynb
+      - Average foodcost per revenue for shops and RE.ipynb
+      - Day dashboard.ipynb
+      - RE WPP.ipynb
+      - Ventes RE hotbars & other.ipynb
+      - automatic-daily-report.ipynb
+      - best_selling_products.ipynb
+      - daily-report.ipynb
+      - events_made_in_shop_and_re.ipynb
+      - food_costs_simplified_code.ipynb
+      - fruit_basket.ipynb
+      - nbr_days_unsold_products_in_latem.ipynb
+      - pavlova_bar.ipynb
+      - sales pavlova bar.ipynb
+      - sales_initiatives_latem.ipynb
+      - shop_unit_economics.ipynb
+      - stock outs.ipynb
