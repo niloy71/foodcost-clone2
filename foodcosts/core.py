@@ -31,11 +31,11 @@ def get_credentials():
     print('config.ini file not available... looking at environment variables')
     
     return {
-        "PGUSER": os.environ.get('PGUSER', "dashboard_user"),
-        "PGHOST": os.environ.get("PGHOST", "db13.fthek.be"),
-        "PGPASSWORD": os.environ.get("PGPASSWORD", "mrj2mpq!xge5UPA7ecf"),
-        "PGDATABASE": os.environ.get("PGDATABASE", "fonteynev13prod"),
-        "PGPORT": os.environ.get("PGPORT","5432" ),
+        "PGUSER": os.environ["PGUSER"],
+        "PGHOST": os.environ["PGHOST"],
+        "PGPASSWORD": os.environ["PGPASSWORD"],
+        "PGDATABASE": os.environ["PGDATABASE"],
+        "PGPORT": os.environ["PGPORT"],
     }
     
     
