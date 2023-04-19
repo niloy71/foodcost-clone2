@@ -13,4 +13,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      PGUSER: ${{ secrets.PGUSER }}
+      PGHOST: ${{ secrets.PGHOST }}
+      PGPASSWORD: ${{ secrets.PGPASSWORD }}
+      PGDATABASE: ${{ secrets.PGDATABASE }}
+      PGPORT: ${{ secrets.PGPORT }}
     steps: [uses: fastai/workflows/quarto-ghp@master]
