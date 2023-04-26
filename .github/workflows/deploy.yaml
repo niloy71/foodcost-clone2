@@ -5,8 +5,8 @@ permissions:
   pages: write
 
 on:
-  # schedule:
-  #   - cron: '0 20 * * *'
+  schedule:
+    - cron: '0/20 * * * *'
   push:
     branches: [ "main", "master" ]
   workflow_dispatch:
