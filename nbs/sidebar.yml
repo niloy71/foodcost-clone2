@@ -4,12 +4,16 @@ website:
       - index.ipynb
       - 00_core.ipynb
       - Average foodcost per revenue for shops and RE.ipynb
+      - Can we spot the best salesperson?.ipynb
+      - Corporate restaurants unit economics including wages.ipynb
       - Day dashboard.ipynb
       - RE WPP.ipynb
+      - Salad bar & hotbar sales in Latem & Overijse.ipynb
+      - Shop unit economics including wages.ipynb
       - Ventes RE hotbars & other.ipynb
+      - Vraag guy ivm winkels.ipynb
       - automatic-daily-report.ipynb
       - best_selling_products.ipynb
-      - daily-report.ipynb
       - events_made_in_shop_and_re.ipynb
       - food_costs_simplified_code.ipynb
       - fruit_basket.ipynb
@@ -18,4 +22,5 @@ website:
       - sales pavlova bar.ipynb
       - sales_initiatives_latem.ipynb
       - shop_unit_economics.ipynb
+      - should we open the corporate restaurants on the friday after a public holiday?.ipynb
       - stock outs.ipynb
