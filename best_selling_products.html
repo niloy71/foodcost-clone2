@@ -1,0 +1,2528 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>foodcosts – best_selling_products</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">foodcosts</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./best_selling_products.html">best_selling_products.html</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">foodcosts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./core.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">core</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Average foodcost per revenue for shops and RE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Average foodcost per revenue for shops and RE.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./can we spot the best salesperson?.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add more features</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Corporate restaurants unit economics including wages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate restaurants unit economics including wages.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./day dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Shop LATEM</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./re wpp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">WPP products solds last n days</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./salad bar &amp; hotbar sales in latem &amp; overijse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">what is selling the best salad bar or hotbar in Latem?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Shop unit economics including wages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Shop unit economics including wages.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ventes RE hotbars &amp; other.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ventes RE hotbars &amp; other.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Vraag guy ivm winkels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vraag guy ivm winkels.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./automatic-daily-report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">automatic-daily-report.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./best_selling_products.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">best_selling_products.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./events_made_in_shop_and_re.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">events_made_in_shop_and_re.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./food_costs_simplified_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">the parameters to set</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fruit_basket.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">fruit_basket.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nbr_days_unsold_products_in_latem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">nbr_days_unsold_products_in_latem.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pavlova_bar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">pavlova_bar.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sales pavlova bar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">WPP products solds last n days</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sales_initiatives_latem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chocolate mousses</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./shop_unit_economics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">shop_unit_economics.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./should we open the corporate restaurants on the friday after a public holiday?.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Should we open the corporate restaurant the Friday after a public holiday?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stock outs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">stock outs.html</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> psycopg2</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> foodcosts.core <span class="im">as</span> core</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_last_week_best_selling_products(shops<span class="op">=</span>[]):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    today <span class="op">=</span> datetime.datetime.now().date()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    start_date <span class="op">=</span> (today <span class="op">-</span> datetime.timedelta(days<span class="op">=</span><span class="dv">7</span>)).strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st">"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    end_date <span class="op">=</span> today.strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st">"</span>)    </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> get_best_selling_products(start_date, end_date, shops)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_top_selling_products_per_column(shops, top_n<span class="op">=</span><span class="dv">10</span>):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> {<span class="st">'rank'</span>: <span class="bu">range</span>(<span class="dv">1</span>, top_n<span class="op">+</span><span class="dv">1</span>)}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> shop <span class="kw">in</span> shops:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        best_selling_products <span class="op">=</span> get_last_week_best_selling_products(shops<span class="op">=</span>[shop])</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        top_selling_products <span class="op">=</span> best_selling_products[:top_n]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        data[shop] <span class="op">=</span> [product <span class="cf">for</span> [shop, product, amount] <span class="kw">in</span> top_selling_products]                </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_color_for_product(existing_bag, product_id):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> generate_color(product_name):</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="bu">id</span> <span class="op">=</span> <span class="bu">hash</span>(product_name)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            red <span class="op">=</span> (<span class="bu">id</span> <span class="op">*</span> <span class="dv">13</span>) <span class="op">%</span> <span class="dv">256</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            green <span class="op">=</span> (<span class="bu">id</span> <span class="op">*</span> <span class="dv">7</span>) <span class="op">%</span> <span class="dv">256</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            blue <span class="op">=</span> (<span class="bu">id</span> <span class="op">*</span> <span class="dv">19</span>) <span class="op">%</span> <span class="dv">256</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"#</span><span class="sc">{</span>red<span class="sc">:02x}{</span>green<span class="sc">:02x}{</span>blue<span class="sc">:02x}</span><span class="ss">99"</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> product_id <span class="kw">not</span> <span class="kw">in</span> existing_bag:</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            existing_bag[product_id] <span class="op">=</span> generate_color(product_id)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> existing_bag[product_id]</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    existing_bag <span class="op">=</span> {}</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    df_style <span class="op">=</span> df.style.applymap(<span class="kw">lambda</span> x: <span class="st">'background-color: '</span><span class="op">+</span> get_color_for_product(existing_bag, x))</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    display(df_style)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_best_selling_products(start_date, end_date, shops<span class="op">=</span>[]):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    translation_dict <span class="op">=</span> core.get_product_names()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    query <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">       v_shop.name AS shop_name, </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">       v_product.name AS product_name, </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">       SUM(v_product.price * v_pos_order_line.quantity) AS total_sales,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">       v_product.id AS product_id</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM v_pos_order_line</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="st">    LEFT JOIN v_product ON v_product.id = v_pos_order_line.product_id</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="st">    LEFT JOIN v_pos_order ON v_pos_order.id = v_pos_order_line.order_id</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="st">    LEFT JOIN v_pos_session ON v_pos_session.id = v_pos_order.session_id</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="st">    LEFT JOIN v_pos ON v_pos.id = v_pos_session.pos_id</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="st">    LEFT JOIN v_shop ON v_shop.id = v_pos.shop_id</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE v_pos_order.created_at BETWEEN '</span><span class="sc">{}</span><span class="st">' AND '</span><span class="sc">{}</span><span class="st">'</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="st">    """</span>.<span class="bu">format</span>(start_date, end_date)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(shops) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        query <span class="op">+=</span> <span class="st">"AND v_shop.name in ('</span><span class="sc">{}</span><span class="st">')"</span>.<span class="bu">format</span>(<span class="st">"','"</span>.join(shops))</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    query <span class="op">+=</span> <span class="st">"GROUP BY v_shop.id, v_shop.name, v_product.id, v_product.name ORDER BY total_sales DESC"</span> </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [[row[<span class="dv">0</span>], translation_dict.get(row[<span class="dv">3</span>],<span class="st">'None'</span>)<span class="op">+</span> <span class="ss">f"(</span><span class="sc">{</span><span class="bu">str</span>(row[<span class="dv">3</span>])<span class="sc">}</span><span class="ss">)"</span>, row[<span class="dv">2</span>]] <span class="cf">for</span> row <span class="kw">in</span> core.make_sql_query(query)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>get_best_selling_products(start_date <span class="op">=</span> <span class="st">'2022-01-01'</span>, end_date <span class="op">=</span> <span class="st">'2022-01-31'</span>, shops <span class="op">=</span> [<span class="st">'Woluwe'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>[['Woluwe', 'PAVLOVA AUX FRUITS ROUGES JETABLE(36501)', Decimal('5555.60000')],
+ ['Woluwe', 'BAR EPICE(50689)', Decimal('2605.98400')],
+ ['Woluwe', 'POULET AU ROMARIN (18191)', Decimal('2463.51300')],
+ ['Woluwe', 'SAUMON MI CUIT EPICE(53011)', Decimal('2291.96000')],
+ ['Woluwe', 'CHAMPIGNONS DES BOIS SAUTES(51532)', Decimal('2194.29370')],
+ ['Woluwe',
+  'SALADE GO GREEN SUCRINE / HARICOTS VERTS / COURGETTES / EDAMAME / AVOCATS(52986)',
+  Decimal('2154.18580')],
+ ['Woluwe', 'DIVERS PIECE BALANCE(54437)', Decimal('2000.00000')],
+ ['Woluwe',
+  'SCAMPIS / OIGNONS / TOMATES SECHEES(50615)',
+  Decimal('1930.3680')],
+ ['Woluwe', 'THON ALBACORE EPICE CUIT(18440)', Decimal('1727.9400')],
+ ['Woluwe',
+  "FILET DE BOEUF / CROUTE D'HERBES / GRAINES DE MOUTARDE(40750)",
+  Decimal('1713.5040000')],
+ ['Woluwe', 'COQUELET CUIT + SAUCE COMPTOIR(55577)', Decimal('1592.10000')],
+ ['Woluwe', 'POMMES DE TERRE AU PARMESAN(50645)', Decimal('1573.84500')],
+ ['Woluwe', 'ASPERGE VERTE ET SUGAR SNAPS (40762)', Decimal('1565.45280')],
+ ['Woluwe',
+  'BELLES DE FONTENAY / GROS SEL / ROMARIN(18602)',
+  Decimal('1477.25640')],
+ ['Woluwe',
+  'HARICOTS VERTS / EDAMAME / OIGNONS(40728)',
+  Decimal('1411.16040')],
+ ['Woluwe',
+  'CHICONS BRAISES / UNION SQUARE NUTS / OIGNONS(51524)',
+  Decimal('1373.39300')],
+ ['Woluwe',
+  'JARDINIERE LEGUMES MARCHE / AIL / HERBES / CITRON(18521)',
+  Decimal('1365.93600')],
+ ['Woluwe', 'GAMBAS GEANTES (50610)', Decimal('1347.0120')],
+ ['Woluwe', 'CAROTTES, CELERI CORIANDRE(36719)', Decimal('1330.21200')],
+ ['Woluwe', 'PUREE NATURE 400G(19281)', Decimal('1244.60000')],
+ ['Woluwe', 'SAUCE COMPTOIR CHAUDE(38021)', Decimal('1223.97600')],
+ ['Woluwe', 'LEGUMES PROVENCAUX(18517)', Decimal('1176.59100')],
+ ['Woluwe',
+  'TARTARE DE SAUMON / SESAME NOIRE / WAKAME - 200G(43712)',
+  Decimal('1144.25000')],
+ ['Woluwe', 'LOTTE EPICEE(51181)', Decimal('1122.35400')],
+ ['Woluwe',
+  'TIRADITO DE SAUMON / SESAME / PIMENTS(53784)',
+  Decimal('1048.83880')],
+ ['Woluwe', 'CABILLAUD EPICE(51837)', Decimal('953.21600')],
+ ['Woluwe', 'MOUSSE CHOCOLAT 110G(19772)', Decimal('936.20000')],
+ ['Woluwe',
+  'TERRINE MILLEFEUILLE DE TRUITE / SAUMON (Tranche)(53145)',
+  Decimal('902.70000')],
+ ['Woluwe', 'WATERZOOI DE POULET(51344)', Decimal('893.02960')],
+ ['Woluwe', 'BOITE 4PCS CUPCAKES(19671)', Decimal('892.80000')],
+ ['Woluwe',
+  "PUREE A L'HUILE D'OLIVE / BASILIC 400G(19285)",
+  Decimal('861.40000')],
+ ['Woluwe', 'BROCHETTE POISSON EPICEE(18323)', Decimal('836.7024')],
+ ['Woluwe',
+  "FILET DE DINDE FARCI (HACHE 100% VOLAILLE) / FRUITS D'HIVER (54441)",
+  Decimal('826.27200')],
+ ['Woluwe', 'BICHE FILET CUIT(18244)', Decimal('814.50180')],
+ ['Woluwe',
+  'COURGETTES FARCIES / COULIS DE TOMATES(51394)',
+  Decimal('777.88620')],
+ ['Woluwe', 'BOULETTES SAUCE TOMATE(52751)', Decimal('758.0414400')],
+ ['Woluwe', 'PUREE NATURE(55798)', Decimal('719.36900')],
+ ['Woluwe', 'PLAT TOO GOOD TO GO(51672)', Decimal('718.5600000')],
+ ['Woluwe', 'BOX 5 PLATS (S4)(44080)', Decimal('690.00000')],
+ ['Woluwe', 'OSSO BUCO DE VEAU CLASSICO(51285)', Decimal('680.19040')],
+ ['Woluwe', 'PAIN DE VIANDE NATURE(51722)', Decimal('656.77500')],
+ ['Woluwe', 'SAUCE BOLOGNAISE(51287)', Decimal('643.03200')],
+ ['Woluwe', 'BUFFET DOLCE FARNIENTE (prix/pers)(19531)', Decimal('630.00000')],
+ ['Woluwe', 'PLAT DU JOUR 9,90(19326)', Decimal('584.10000')],
+ ['Woluwe', 'MAGRET DE CANARD CUIT(18218)', Decimal('583.22920')],
+ ['Woluwe',
+  'PAIN DE VIANDE AUX HERBES / TOMATES SECHEES(51698)',
+  Decimal('575.08920')],
+ ['Woluwe', 'SPAGHETTI BOLOGNAISE 550G(19312)', Decimal('568.80000')],
+ ['Woluwe', 'COQUELET MIEL 2PCS(20181)', Decimal('556.80000')],
+ ['Woluwe', 'TIRAMISU SPECULOOS 110G(19777)', Decimal('551.80000')],
+ ['Woluwe', 'RADIATORI JAMBON FROMAGE 400G(53690)', Decimal('543.00000')],
+ ['Woluwe', 'AUBERGINES FARCIES A LA LIBANAISE(55576)', Decimal('541.48500')],
+ ['Woluwe', 'None(53502)', Decimal('533.2000000')],
+ ['Woluwe',
+  'PATES ORZO / TOMATES SECHEES / FETA / AMANDES / OLIVES / CITRON / KALE(52979)',
+  Decimal('527.52700')],
+ ['Woluwe', 'FAMILY FIT 40 EURO(19377)', Decimal('520.00000')],
+ ['Woluwe', 'SAUCE BOLOGNAISE(51288)', Decimal('516.59400')],
+ ['Woluwe', 'HACHIS PARMENTIER(17959)', Decimal('503.04240')],
+ ['Woluwe',
+  'CANNELLONI BOLOGNAISE / TOMATES / CAROTTES / FENOUIL / OIGNONS(51539)',
+  Decimal('492.60900')],
+ ['Woluwe', 'SAUMON FUME TRANCHE MAIN (250gr)(38138)', Decimal('473.48000')],
+ ['Woluwe',
+  'CAILLE FARCIE DESOSSEE / HACHE 100% VOLAILLE / HERBES (55411)',
+  Decimal('462.80000')],
+ ['Woluwe',
+  'SAUMON FUME / 12 BLINIS /  CREME CARDAMOME(53358)',
+  Decimal('462.40000')],
+ ['Woluwe', 'VOL-AU-VENT(51185)', Decimal('462.08220')],
+ ['Woluwe', 'PANNA COTTA(55849)', Decimal('455.70000')],
+ ['Woluwe',
+  'LASAGNE / SAUCE BOLOGNAISE (HACHE 100% VOLAILLE) / EMMENTAL(51292)',
+  Decimal('452.65220')],
+ ['Woluwe', 'BOL SALADE THAI AUX SCAMPIS 400G(19082)', Decimal('449.0000000')],
+ ['Woluwe', 'TIRAMISU CLASSIQUE 110G(19783)', Decimal('446.40000')],
+ ['Woluwe',
+  'CAILLE FARCIE DESOSSEE / HACHE 100% VOLAILLE / TRUFFEE (19161)',
+  Decimal('445.00000')],
+ ['Woluwe',
+  'ESCALOPE DE DINDE / STRACCIATELLA DI BUFALA / SAUCE TOMATE AU BASILIC (51731)',
+  Decimal('440.46720')],
+ ['Woluwe',
+  'TARTARE DE DAURADE / SESAME NOIR / WAKAME 200G(53552)',
+  Decimal('438.55000')],
+ ['Woluwe', 'POTAGE DE POISSONS (1L)(38562)', Decimal('434.00000')],
+ ['Woluwe', 'SALADE CREVETTE PDT HARICOT 400G(19017)', Decimal('428.2200000')],
+ ['Woluwe', 'PLAT DU JOUR 10.9(19322)', Decimal('425.10000')],
+ ['Woluwe',
+  'TABOULE LIBANAIS / TOMATES / HERBES VERTES(52962)',
+  Decimal('421.15360')],
+ ['Woluwe', 'BISQUE HOMARD 1L(19565)', Decimal('420.0000000')],
+ ['Woluwe',
+  'DINDE ESCALOPE PANEE SAUCE + COULIS(18249)',
+  Decimal('411.50200')],
+ ['Woluwe', 'PUREE BASILIC(55790)', Decimal('410.05000')],
+ ['Woluwe',
+  'TORTELLONI RICOTTA / EPINARD / CHAMPIGNONS DES BOIS(56151)',
+  Decimal('409.6898000')],
+ ['Woluwe',
+  'BONBONS TRUFFES SAUCE TARTUFATA 1PERS.(53692)',
+  Decimal('408.80000')],
+ ['Woluwe', 'NOUILLE SAUTEE LEGUME CROQUANT(52478)', Decimal('405.8984800')],
+ ['Woluwe', 'POMMES  JONAGOLD / AIRELLES(50660)', Decimal('393.85500')],
+ ['Woluwe', 'BOULETTES SAUCE TOMATE(52753)', Decimal('387.7468200')],
+ ['Woluwe',
+  'GIRASOLE NOIR AUX CEPES ET TRUFFES / SAUCE TARTUFATA(55822)',
+  Decimal('379.8144000')],
+ ['Woluwe', 'CHAMPAGNE(53608)', Decimal('379.6800000')],
+ ['Woluwe', 'WATERZOOI POISSON(51330)', Decimal('375.36000')],
+ ['Woluwe',
+  'LASAGNE / SAUCE BOLOGNAISE (HACHE 100% VOLAILLE) / EMMENTAL(51290)',
+  Decimal('372.29660')],
+ ['Woluwe', '7/7 WHOLE WEEK (1PERS)(19385)', Decimal('372.00000')],
+ ['Woluwe', 'SAUMON FUME TRANCHE MAIN (100gr)(38137)', Decimal('371.80000')],
+ ['Woluwe', 'TARTE MOELLEUX CHOCOLAT 4PERS(19724)', Decimal('371.80000')],
+ ['Woluwe', 'OSSO BUCO DE VEAU CLASSICO(51282)', Decimal('368.70620')],
+ ['Woluwe',
+  'VELOUTE TOMATES ET MINI BOULETTES 1L(20201)',
+  Decimal('368.0000000')],
+ ['Woluwe', 'TABOULE(52911)', Decimal('366.77340')],
+ ['Woluwe',
+  'SALADE TIKKA AU POULET / CONCOMBRE / VINAIGRETTE / WASABI (52973)',
+  Decimal('364.21280')],
+ ['Woluwe', 'VOL-AU-VENT(51184)', Decimal('362.52600')],
+ ['Woluwe', 'COQUELET AU MIEL CUIT (1 PIECE)(19155)', Decimal('356.70000')],
+ ['Woluwe', 'VELOUTE CHAMPIGNONS DES BOIS 1L(38203)', Decimal('351.0000000')],
+ ['Woluwe', 'CHICON AU GRATIN(53082)', Decimal('350.48840')],
+ ['Woluwe', 'DOS DE CABILLAUD EPICE(53764)', Decimal('349.92000')],
+ ['Woluwe', 'NAVARIN AGNEAU ET PDT 450G(36596)', Decimal('349.30000')],
+ ['Woluwe',
+  'SALADE DE LENTILLES VERTES / HERBES VERTES(18053)',
+  Decimal('346.41880')],
+ ['Woluwe',
+  'POTAGE AUX CAROTTES / LAIT DE COCO (1L)(38559)',
+  Decimal('344.0000000')],
+ ['Woluwe', 'PUREE TRUFFEE 400G(19286)', Decimal('339.70000')],
+ ['Woluwe',
+  "BURGER D'AUBERGINES / COULIS DE TOMATES(51386)",
+  Decimal('336.04200')],
+ ['Woluwe', 'POTAGE MINESTRONE ROUGE (1L)(38588)', Decimal('336.0000000')],
+ ['Woluwe', 'COQUELET LAQUE (1PCE)(40466)', Decimal('330.60000')],
+ ['Woluwe', 'TERRINE HOMARD LEGUME(18824)', Decimal('329.99280')],
+ ['Woluwe',
+  'TAJINE AGNEAU / LEGUMES DE SAISON / ABRICOTS(51378)',
+  Decimal('327.91680')],
+ ['Woluwe',
+  'LEMONGRASS / RAISINS / CORIANDRE / CITRONNELLE(52757)',
+  Decimal('326.10060')],
+ ['Woluwe',
+  'TABOULE LIBANAIS / TOMATES / HERBES VERTES(52961)',
+  Decimal('325.45660')],
+ ['Woluwe', 'GRATIN DAUPHINOIS (2 PERS.)(19288)', Decimal('322.40000')],
+ ['Woluwe',
+  'ESCALOPE DE DINDE ESTRAGON JEUNE CAROTTE ET OIGNON(51202)',
+  Decimal('321.86880')],
+ ['Woluwe', 'CHOUCROUTE GARNIE (34616)', Decimal('318.33840')],
+ ['Woluwe', 'MINI CHICKPEA BALLS ET HOUMOUS(39120)', Decimal('315.0000000')],
+ ['Woluwe',
+  'LEMONGRASS / RAISINS / CORIANDRE / CITRONNELLE(52756)',
+  Decimal('313.05960')],
+ ['Woluwe', 'MOUSSE CHOCOLAT 85G(19769)', Decimal('309.60000')],
+ ['Woluwe', 'LINGUINI ROQUETTE TOMATE SECHEE(38619)', Decimal('308.9962600')],
+ ['Woluwe', 'VELOUTE POTIRON CREME 1L(19561)', Decimal('304.0000000')],
+ ['Woluwe', 'CHICON GRATIN ET PUREE(19273)', Decimal('303.36000')],
+ ['Woluwe', 'MOUSSAKA(51395)', Decimal('302.36220')],
+ ['Woluwe', 'MAGRET DE CANARD EN SAUCE(40752)', Decimal('296.54800')],
+ ['Woluwe',
+  'CHICKEN FINGERS / SAUCE TIKKA MASALA(51528)',
+  Decimal('293.67060')],
+ ['Woluwe', 'CANNELE DE BORDEAUX - 4PCS(32525)', Decimal('289.9400000')],
+ ['Woluwe', 'POTAGE COURGETTE ET CRESSON 1L(19568)', Decimal('288.0000000')],
+ ['Woluwe',
+  'POTIRONS CARAMELISES AU MIEL / SOJA / OIGNONS / CAROTTES / AIRELLES(50678)',
+  Decimal('287.23500')],
+ ['Woluwe', 'LINGUINI CHAMPIGNONS DES BOIS 450G(50022)', Decimal('285.12000')],
+ ['Woluwe', 'WATERZOOI DE POULET ET PDT 450G(36601)', Decimal('284.40000')],
+ ['Woluwe', 'CHICON AU GRATIN(53083)', Decimal('280.07940')],
+ ['Woluwe', 'POTAGE THAI POULET 1L(38589)', Decimal('280.0000000')],
+ ['Woluwe',
+  'MINI BOULETTES THAI CURRY CORIANDRE(51353)',
+  Decimal('279.0346000')],
+ ['Woluwe', 'SALADE POULET AUX HERBES 400G(19104)', Decimal('278.3800000')],
+ ['Woluwe',
+  'SALADE DE QUINOA / POIS CHICHES / HARICOTS ROUGES / AZUKI / TOMATES SECHEES  / KALE(56143)',
+  Decimal('277.41280')],
+ ['Woluwe', 'SAUCE BOLOGNAISE(51289)', Decimal('276.82200')],
+ ['Woluwe', 'GUILLAUME CHARDONNAY 75CL(51369)', Decimal('275.65000')],
+ ['Woluwe',
+  '4 - 12P FILET DE SOLE LIMANDE, SAUCE VERTE, CHAMPIGNONS ET ÉPINARDS, STOEMP AUX POIREAUX. (GF)(44000)',
+  Decimal('274.92000')],
+ ['Woluwe',
+  'POTAGE AUX POIREAUX ET NOIX DE MUSCADE 1L(50725)',
+  Decimal('272.0000000')],
+ ['Woluwe',
+  'PETIT SABLE PUR BEURRE PARMESAN ET ROMARIN(34182)',
+  Decimal('272.0000')],
+ ['Woluwe', 'PLAT DU JOUR 12.90(19320)', Decimal('270.90000')],
+ ['Woluwe',
+  'VELOUTE DE PATATES DOUCES AU LAIT DE COCO 1L(54395)',
+  Decimal('270.00000')],
+ ['Woluwe', '5/7 FIVE A WEEK (1PERS)(38227)', Decimal('269.60000')],
+ ['Woluwe', 'AUBERGINES À LA PARMIGIANA(51560)', Decimal('268.9128')],
+ ['Woluwe', 'TARTE FROMAGE SPECULOOS PORTION(19705)', Decimal('268.45000')],
+ ['Woluwe',
+  'PATATES DOUCES / HUILE ITALIENNE / POIS CHICHES / EPICES CHAI / PERSIL(50727)',
+  Decimal('266.79900')],
+ ['Woluwe', 'JAMBON A L OS LAQUE(55641)', Decimal('265.47840')],
+ ['Woluwe', 'GRATIN DAUPHINOIS(18599)', Decimal('265.01900')],
+ ['Woluwe', 'POTAGE COURGETTE EPINARD 1L(56117)', Decimal('264.00000')],
+ ['Woluwe',
+  'PAPPARDELLE CHAMPIGNONS DES BOIS / TARTUFATA ET PARMESAN(56149)',
+  Decimal('262.99380')],
+ ['Woluwe', 'POIRES ROTIES AUX EPICES(54418)', Decimal('259.53200')],
+ ['Woluwe',
+  'CHICKEN FINGERS / SAUCE TIKKA MASALA(51529)',
+  Decimal('259.40820')],
+ ['Woluwe',
+  'FILET DE PINTADEAU / SAUCE CREME AUX CHAMPIGNONS DES BOIS / MARJOLAINE(52236)',
+  Decimal('259.35700')],
+ ['Woluwe',
+  'TARTARE DE SAUMON / SESAME NOIRE / WAKAME 400G (Gluten Free)(55885)',
+  Decimal('258.70000')],
+ ['Woluwe', 'VELOUTE DE TOMATES / BASILIC 1L(38766)', Decimal('256.0000000')],
+ ['Woluwe', 'POTAGE LEGUMES DU MARCHE 1L(19545)', Decimal('256.0000000')],
+ ['Woluwe',
+  'QUICKLUNCHL SPAGHETTI BOLOGNAISE 410g(19308)',
+  Decimal('253.45000')],
+ ['Woluwe', 'ACC 1 : GRATIN 600G(55422)', Decimal('251.10000')],
+ ['Woluwe', 'LASAGNE VEGE(51421)', Decimal('250.5642000')],
+ ['Woluwe',
+  'RIZ SAUVAGE / AMANDES / FRUITS SECS / CUMIN / JEUNES CAROTTES GRILLEES(55631)',
+  Decimal('243.04000')],
+ ['Woluwe', 'PUREE DE CELERI-RAVE (400g)(19282)', Decimal('241.80000')],
+ ['Woluwe', 'MOUSSE CHOCOLAT 400G(19773)', Decimal('241.5000')],
+ ['Woluwe',
+  'SALADE DE LENTILLES VERTES / HERBES VERTES(54331)',
+  Decimal('241.47760')],
+ ['Woluwe', 'VELOUTE DE CHICONS(51780)', Decimal('240.00000')],
+ ['Woluwe', 'PLAT DU JOUR 9.9 COMPTOIR(34712)', Decimal('237.6000')],
+ ['Woluwe', 'TARTE MOELLEUX CHOCOLAT PORTION(19723)', Decimal('236.60000')],
+ ['Woluwe',
+  'FILET DE PINTADEAU / SAUCE CREME AUX CHAMPIGNONS DES BOIS / MARJOLAINE(52237)',
+  Decimal('236.05200')],
+ ['Woluwe',
+  'CHICKEN FINGERS / SAUCE TIKKA MASALA(55499)',
+  Decimal('231.07200')],
+ ['Woluwe', 'SUSHI GRAND(19458)', Decimal('231.0000000')],
+ ['Woluwe', 'CHOUCROUTE ET PUREE(19792)', Decimal('227.52000')],
+ ['Woluwe', 'VOL AU VENT PUREE(19301)', Decimal('227.52000')],
+ ['Woluwe',
+  'ESCALOPE DE POULET / MISO / CHAMPIGNONS(54417)',
+  Decimal('225.54420')],
+ ['Woluwe', 'LINGUINI ZUCHINE AL LIMONE 500G(49998)', Decimal('221.00000')],
+ ['Woluwe', 'TARTE GALETTE DES ROIS 4PERS(34088)', Decimal('219.70000')],
+ ['Woluwe',
+  'CHICKEN FINGERS / SAUCE TIKKA MASALA(51527)',
+  Decimal('218.47260')],
+ ['Woluwe',
+  'CANNELLONI RICOTTA ET EPINARDS / SAUCE TOMATES / BASILIC(51538)',
+  Decimal('218.43640')],
+ ['Woluwe',
+  '3 - 14P HACHIS PARMENTIER (100% HACHÉ DE VOLAILLE, ÉPINARDS, TOMATES,..)(44009)',
+  Decimal('218.04000')],
+ ['Woluwe',
+  '1 - 11P MAFALDE, SAUCE TARTUFATA, CHAMPIGNONS DES BOIS, OIGNONS ET PARMESAN(43949)',
+  Decimal('217.58000')],
+ ['Woluwe',
+  '1 - 12P FILET DE DAURADE EN CROÛTE D’ÉPICES, SAUCE VERTE, BUTTERNUT GRILLÉ ET NOIX DE CAJOU, STOEMP AUX POIREAUX(43953)',
+  Decimal('217.58000')],
+ ['Woluwe', 'POUILLY FUME 75CL(50788)', Decimal('216.90000')],
+ ['Woluwe',
+  'ACC 1 : GRATIN / CELERI RAVE POTIRON / POMME AIRELLES / CHICON CONFIT(18850)',
+  Decimal('213.60000')],
+ ['Woluwe',
+  'PATES ORZO / TOMATES SECHEES / FETA / AMANDES / OLIVES / CITRON / KALE(52980)',
+  Decimal('213.09400')],
+ ['Woluwe',
+  'PUREE AUX CAROTTES / EPICES RAS EL HANOUT 400G(19284)',
+  Decimal('212.40000')],
+ ['Woluwe',
+  'VELOUTÉ DE POIVRONS DOUX / MASCARPONE (50736)',
+  Decimal('208.00000')],
+ ['Woluwe', 'JAMBONNEAU MIEL / MOUATDE (18228)', Decimal('207.37080')],
+ ['Woluwe',
+  'SUPREME DE POULET / STRACCIATELLA DI BUFALA / CHAMPIGNONS / ESTRAGON(55643)',
+  Decimal('206.89920')],
+ ['Woluwe',
+  'LES 3 COQUILLES SAINT JACQUES GRILLEES / SAUCE VERTE AUX COURGETTES / GROS CRESSON(19595)',
+  Decimal('206.40000')],
+ ['Woluwe', 'MINI-SATE DE POULET + SAUCE(20018)', Decimal('205.8000')],
+ ['Woluwe', 'PETIT JAMBONNEAU LAQUE SESAMISO(55640)', Decimal('203.75760')],
+ ['Woluwe', 'GUILLAUME MERLOT 75CL(51368)', Decimal('201.15000')],
+ ['Woluwe', 'CAROTTE POTIRON AIRELLE(18490)', Decimal('200.81100')],
+ ['Woluwe',
+  'TARTE ABRICOTS ROTIS / CREME DE NOISETTES  (PORTION)(55484)',
+  Decimal('200.20000')],
+ ['Woluwe', 'POTAGE BROCOLI ET THYM 1L(19553)', Decimal('200.00000')],
+ ['Woluwe',
+  'POTAGE AUX CHAMPIGNONS DE PARIS (1L)(38566)',
+  Decimal('200.00000')],
+ ['Woluwe',
+  'SALADE COLESLAW : CHOU BLANC / CAROTTES / JEUNES OIGNONS / VINAIGRETTE YAOURT(52967)',
+  Decimal('199.29280')],
+ ['Woluwe',
+  '2 - 13P JAMBONNEAU EN HOCHEPOT DE LÉGUMES D’HIVER ET POMMES DE TERRE. (GF)(43992)',
+  Decimal('199.08000')],
+ ['Woluwe',
+  '2 - 1P FILET DE SAUMON LAQUÉ , NOUILLES SAUTÉES, POIREAUX GRILLÉS À L’HUILE ET LAURIER ET CORIANDRE.(43970)',
+  Decimal('199.08000')],
+ ['Woluwe', 'SASHIMI 16 PCS(19464)', Decimal('198.0000000')],
+ ['Woluwe', 'BISQUE HOMARD 1/2L(19564)', Decimal('196.00000')],
+ ['Woluwe', 'RIZ BASMATI NATURE 400G(19272)', Decimal('193.8000000')],
+ ['Woluwe',
+  'RAVIOLE OUVERTE DE GAMBAS / LAIT DE COCO / DUXELLES DE PETITS LÉGUMES(53160)',
+  Decimal('193.70000')],
+ ['Woluwe', 'MINI KEFTA(51349)', Decimal('192.9330000')],
+ ['Woluwe', 'REPAS A TABLE(19391)', Decimal('192.00000')],
+ ['Woluwe',
+  'LASAGNE / SAUCE BOLOGNAISE (HACHE 100% VOLAILLE) / EMMENTAL(51291)',
+  Decimal('191.87220')],
+ ['Woluwe',
+  '1 - 12P FILET DE SOLE LIMANDE, SAUCE À LA MOUTARDE DOUCE (CRÈME 5%) CHAMPIGNONS SAUTÉS ET ÉPINARDS AUX OIGNONS, STOEMP AUX POIREAUX. (GF)(43854)',
+  Decimal('189.60000')],
+ ['Woluwe',
+  'CHICKEN FINGERS TIKKA + ACCOMPAGNEMENT (19381)',
+  Decimal('189.60000')],
+ ['Woluwe',
+  '1 - 1P FILET D’AIGLEFIN, SAUCE AUX POIVRONS DOUX, BLETTES AUX OIGNONS, PUREE DE CELERI-RAVE(43927)',
+  Decimal('187.91000')],
+ ['Woluwe',
+  'COMPOTE DE POMMES / AIRELLES / FIGUES / RAISINS / ABRICOTS (400g)(19694)',
+  Decimal('186.30000')],
+ ['Woluwe', 'SALADE FREEKEH POTIRON AIRELLE(56141)', Decimal('183.88580')],
+ ['Woluwe', 'CHAMPAGNE(53609)', Decimal('182.2500000')],
+ ['Woluwe', 'RATATOUILLE LEGUME(51441)', Decimal('181.85700')],
+ ['Woluwe',
+  'FENOUIL GRILLE / OIGNONS / LAURIER / CORIANDRE / GRAINES DE MOUTARDE(36796)',
+  Decimal('180.68700')],
+ ['Woluwe',
+  'CELERI-RAVE GRILLE / OIGNONS / POTIRON(49421)',
+  Decimal('180.57000')],
+ ['Woluwe', 'SALADE THAI(52963)', Decimal('180.28360')],
+ ['Woluwe', "NAVARIN D'AGNEAU(51381)", Decimal('178.73280')],
+ ['Woluwe',
+  'ZAKOUSKIS RONDS : (CREVETTES / FROMAGE / CHAMPIGNONS)(19967)',
+  Decimal('178.08000')],
+ ['Woluwe', 'MOUSSE CHOCOLAT DUO(51237)', Decimal('176.9000000')],
+ ['Woluwe',
+  'PAELLA VEGAN AUX LEGUMES DE SAISON 500G(54552)',
+  Decimal('176.80000')],
+ ['Woluwe',
+  'CAILLE FARCIE AU FOIE GRAS (DESOSSÉE / 100% HACHÉ DE VOLAILLE) / JUS BRUN AU THYM(40535)',
+  Decimal('176.40000')],
+ ['Woluwe',
+  "FILET DE DINDE DE FERME / FARCE AUX FRUITS D'HIVER CUIT / SAUSE LÉGÈREMENT CRÉMÉE(50392)",
+  Decimal('175.50000')],
+ ['Woluwe', 'MISE EN PLACE/SUPPORT FORFAIT(51140)', Decimal('175.45000')],
+ ['Woluwe', 'PLAT DU JOUR 15,90(19323)', Decimal('174.90000')],
+ ['Woluwe',
+  'SARRASIN / HARICOTS ROUGES / POTIRON / SESAME ET PERSIL(56137)',
+  Decimal('173.73020')],
+ ['Woluwe', 'PANNA COTTA(55850)', Decimal('173.60000')],
+ ['Woluwe',
+  'FEUILLETE AU FROMAGE DE CHEVRE (PESTO ET FIGUES) / GARNITURE DE SAISON(19493)',
+  Decimal('172.80000')],
+ ['Woluwe', 'POTAGE MINESTRONE ROUGE (1/2 L)(19588)', Decimal('172.0000000')],
+ ['Woluwe', 'SPUMANTE PINOT ROSE 75CL(55951)', Decimal('170.55000')],
+ ['Woluwe', 'TARTE FRUIT ROUGE MERINGUE 4PERS(19687)', Decimal('169.00000')],
+ ['Woluwe',
+  '2 - 6P CHICONS AU GRATIN,  PURÉE DE POMMES DE TERRE(43993)',
+  Decimal('168.13000')],
+ ['Woluwe', 'POTAGE CHOU FLEUR CURRY DOUX 1L(51712)', Decimal('168.0000000')],
+ ['Woluwe', 'PUREE POIREAUX 400G(19283)', Decimal('167.40000')],
+ ['Woluwe',
+  'FILET DE PINTADEAU SAUCE MOUTARDE COCO MASSALA(38233)',
+  Decimal('166.23360')],
+ ['Woluwe',
+  'BATONNET POULET GINGEMBRE/SESAME CUIT(18157)',
+  Decimal('165.68760')],
+ ['Woluwe', 'COMPOTE POMME 400G(19292)', Decimal('164.1500000')],
+ ['Woluwe', 'GNOCCHI / CREME PARMESAN / BASILIC(53566)', Decimal('163.36320')],
+ ['Woluwe', "NAVARIN D'AGNEAU(51382)", Decimal('163.12320')],
+ ['Woluwe', 'TIRAMISU CLASSIQUE 400G(19785)', Decimal('162.50000')],
+ ['Woluwe',
+  '1 - 10P BOULETTE DE VOLAILLE, JUS BRUN À LA MOUTARDE TIERENTYN, POTIRON CARAMÉLISÉ AU MIEL ET AU SOJA, OIGNONS ET AIRELLES, PURÉE DE CÉLERI-RAVE(43852)',
+  Decimal('161.16000')],
+ ['Woluwe',
+  '1 - 3P SUPRÊME DE POULET AUX CHICONS ET STRACCIATELLA, CHICONS ET OIGNONS AU FOUR, PURÉE DE POMMES DE TERRE. (GF)(43845)',
+  Decimal('161.16000')],
+ ['Woluwe',
+  '2 - 7P PAËLLA VÉGAN AUX LÉGUMES DE SAISON. (GF)(V)(43980)',
+  Decimal('161.16000')],
+ ['Woluwe',
+  '1 - 14P HACHIS PARMENTIER (100% HACHÉ DE VOLAILLE, ÉPINARDS, TOMATES,..)(43856)',
+  Decimal('161.16000')],
+ ['Woluwe',
+  '2 - 8P SCAMPIS SAUCE PUTTANESCA, CAROTTES ET POIVRONS CONFITS, LINGUINES AUX ÉPICES.(43982)',
+  Decimal('161.16000')],
+ ['Woluwe', 'VELOUTE CELERI RAVE 1L(19539)', Decimal('160.0000000')],
+ ['Woluwe', 'MENU WINTERWONDERLAND(19434)', Decimal('159.45000')],
+ ['Woluwe', 'None(53706)', Decimal('158.70000')],
+ ['Woluwe',
+  'PUREE AUX CAROTTES / EPICES RAZ EL HANOUT(55792)',
+  Decimal('158.68050')],
+ ['Woluwe', '(56140)', Decimal('157.28160')],
+ ['Woluwe',
+  'RISOTTO AUX FEUILLES DE CITRONNIER 400G(19274)',
+  Decimal('155.1000000')],
+ ['Woluwe', 'SUSHI PETIT(19459)', Decimal('154.5000000')],
+ ['Woluwe',
+  'ZAKOUSKIS CARRES : (CROQUES / MINI PIZZAS / QUICHES)(19966)',
+  Decimal('152.64000')],
+ ['Woluwe',
+  '2 - 12P FILET DE COLIN, COULIS DE BETTERAVE ROUGE, COURGETTES RÔTIES, RIZ SAUVAGE, AMANDES ET POIS CHICHES. (GF)(43990)',
+  Decimal('151.68000')],
+ ['Woluwe', 'BOULETTE NATURE + ACC (prix/pers)(36742)', Decimal('151.68000')],
+ ['Woluwe',
+  '4 - 14P VOL AU VENT CHIKKA, LÉGUMES PROVENÇAUX, RIZ BASMATI ET PERSILLADE. (V)(44006)',
+  Decimal('151.68000')],
+ ['Woluwe',
+  'DINDE DE FERME FARCIE CRUE (PRIX/PERS.)(50238)',
+  Decimal('148.50000')],
+ ['Woluwe',
+  '1 - 5P SCAMPIS, RISOTTO DE SARRASIN AUX CHAMPIGNONS DES BOIS, POTIRONS, OIGNONS ET HERBES VERTES(43934)',
+  Decimal('148.35000')],
+ ['Woluwe',
+  '1 - 7P FILET DE SAUMON LAQUE, POIREAUX ET PETITS POIS À L’ÉCHALOTE, RIZ BASMATI AUX POIS CHICHES ET RAISINS(43941)',
+  Decimal('148.35000')],
+ ['Woluwe',
+  'VERRINE APERO MIX (BTE - 4PCES) - HORS CAUTION(20011)',
+  Decimal('147.20000')],
+ ['Woluwe', "ROGAN JOSH D'AGNEAU(54385)", Decimal('146.70720')],
+ ['Woluwe', 'MERVEILLEUX AU CHOCOLAT 110G(51176)', Decimal('144.40000')],
+ ['Woluwe',
+  'POTAGE CHOU FLEUR AU PERSIL PLAT 1 L(52789)',
+  Decimal('144.0000000')],
+ ['Woluwe', 'TERRINE DE CANARD / FOIE GRAS(55584)', Decimal('143.75920')],
+ ['Woluwe',
+  'DELUXE ULTIMATE PARTY (prix/ pers.)(52273)',
+  Decimal('143.00000')],
+ ['Woluwe', 'RIZ CONDE AUX ABRICOTS 150G(19695)', Decimal('142.60000')],
+ ['Woluwe',
+  '2 - 11P BOULETTE DE HACHÉ DE VOLAILLE, JUS DE CUISSON, SALSIFIS ET OIGNONS GRILLÉS, PURÉE DE CAROTTES RAS EL HANOUT(43989)',
+  Decimal('142.20000')],
+ ['Woluwe',
+  'LES 3 COQUILLES ST JACQUES / SAUCE CRESSON / GROS CRESSON(44063)',
+  Decimal('141.90000')],
+ ['Woluwe',
+  'FILET DE PINTADEAU / STRACCIATELLA / SAUCE CREME AUX CHAMPIGNONS DES BOIS / MARJOLAINE(56292)',
+  Decimal('141.70000')],
+ ['Woluwe', 'CAUTION PLATEAU MELAMINE(19947)', Decimal('140.00000')],
+ ['Woluwe', 'COQUELET ESTRAGON 2PCS(20180)', Decimal('139.20000')],
+ ['Woluwe',
+  'ZAKOUSKIS VEGETARIENS : (FROMAGE BLEU / NOIX - MISO / CHICONS - CHEVRE / SESAME)(53147)',
+  Decimal('135.68000')],
+ ['Woluwe', 'POMMES  JONAGOLD / AIRELLES(51871)', Decimal('135.23440')],
+ ['Woluwe', 'TARTE NOIX DE PECAN 4PERS(20190)', Decimal('135.20000')],
+ ['Woluwe', 'PLAT DU JOUR 8.90(19324)', Decimal('133.50000')],
+ ['Woluwe',
+  '4 - 11P HAMBURGER DE POIS CHICHES ET DE QUINOA, CURRY DE LÉGUMES AUX ÉPINARDS, ORZO. (V)(43999)',
+  Decimal('132.72000')],
+ ['Woluwe', 'COQUELET ESTRAGON 1PCE(20200)', Decimal('130.50000')],
+ ['Woluwe', '5/7 FIVE A WEEK (2PERS)(38408)', Decimal('130.00000')],
+ ['Woluwe', 'SALADE POULET SURIMI 150G(53500)', Decimal('129.85000')],
+ ['Woluwe',
+  '2 - 2P FILET DE COQ AU VIN, FENOUIL ET POMMES GRILLES, POMMES DE TERRE AU ROMARIN(43984)',
+  Decimal('128.57000')],
+ ['Woluwe', 'POTAGE TOM KHA KAI LEGUMES 1L(38591)', Decimal('128.0000000')],
+ ['Woluwe',
+  'SUPREME DE POULET CUIT MISO/CACAHUETE/CITRON(54469)',
+  Decimal('127.12320')],
+ ['Woluwe', 'TRE DI TRE 75CL(55946)', Decimal('126.50000')],
+ ['Woluwe', 'PUREE LARDON ET PERSIL PLAT 400G(40556)', Decimal('126.40000')],
+ ['Woluwe',
+  'TARTARE DE DAURADE / SESAME NOIR / WAKAME 400G(55884)',
+  Decimal('125.30000')],
+ ['Woluwe', 'MERVEILLEUX SPECULOOS(54433)', Decimal('124.00000')],
+ ['Woluwe',
+  '2 - 9P  BŒUF MASSAMAN, CAROTTES ET OIGNONS AU FOUR, RIZ BASMATI AUX HERBES. (GF)(43985)',
+  Decimal('123.24000')],
+ ['Woluwe', 'SPAGHETTI VEGETARIEN 550G(19311)', Decimal('123.24000')],
+ ['Woluwe',
+  '4 - 13P AUBERGINE AU CHEDDAR (PLANT BASED), FAÇON PARMIGIANA, POIS CHICHES GRILLÉS AUX ÉPICES, SEMOULE AUX HERBES. (V)(44001)',
+  Decimal('123.24000')],
+ ['Woluwe', 'PLAT DU JOUR 14,90(19318)', Decimal('119.20000')],
+ ['Woluwe', 'VENTE COMPTOIR(34212)', Decimal('119.0000')],
+ ['Woluwe',
+  "2 - 5P SCAMPIS ALL' ARRABBIATA, COURGETTES ET PETITS POIS, RADIATORI EN PERSILLADE AU CITRON(43991)",
+  Decimal('118.68000')],
+ ['Woluwe',
+  'GNOCCHI / CHAMPIGNONS DES BOIS / TARTUFATA ET CREME DE PARMESAN(56098)',
+  Decimal('118.67700')],
+ ['Woluwe', 'PAVLOVA AUX FRUITS ROUGES EN VASE(19842)', Decimal('115.60000')],
+ ['Woluwe', 'CAILLE FARCIE TOMATE OIGNON(38831)', Decimal('115.2000000')],
+ ['Woluwe', 'FROMAGE BATONNET 150G(19743)', Decimal('115.2000')],
+ ['Woluwe',
+  'TURDUCKEN (TURKEY, DUCK, CHICKEN) / FARCE TRUFFÉE / SAUCE LÉGÈREMENT CRÉMÉE(18898)',
+  Decimal('113.85000')],
+ ['Woluwe',
+  '2 - 6P SUPRÊME DE POULET, SAUCE AU MISO ET CACAHUÈTES, CHICONS RÔTIS AU FOUR, POMMES DE TERRE AU GROS SEL ET ROMARIN(43978)',
+  Decimal('113.76000')],
+ ['Woluwe',
+  '1 - 9P SCAMPIS, RISOTTO DE SARRASIN AUX CHAMPIGNONS, COURGETTES, OIGNONS ET HERBES VERTES. (GF)(43851)',
+  Decimal('113.76000')],
+ ['Woluwe',
+  '4 - 8P FILET DE DAURADE, SAUCE AU VIN BLANC, CAROTTES ET PETITS POIS, PURÉE AUX PERSIL ET LARDONS. (GF)(43996)',
+  Decimal('113.76000')],
+ ['Woluwe', 'SALADE POULET NATURE 150G(53501)', Decimal('111.30000')],
+ ['Woluwe',
+  'ESCALOPE DE POULET  / STRACCIATELLA / ESTRAGON(54416)',
+  Decimal('110.65560')],
+ ['Woluwe', 'CHILI SIN CARNE AUX LENTILLES(34078)', Decimal('110.2290000')],
+ ['Woluwe',
+  'BLANQUETTE DE VEAU AUX OIGNONS GRELOTS(51450)',
+  Decimal('109.42920')],
+ ['Woluwe',
+  "2 - 1P FILET DE SAUMON, SAUCE MOUTARDE A L'ANCIENNE, CHICONS AUX NOIX ET OIGNONS, PURÉE DE CAROTTES RAZ EL HANOUT. (43983)",
+  Decimal('108.79000')],
+ ['Woluwe',
+  '1 - 13P BEIRUT CHICKPEA BALLS, SAUCE TOMATE AU FENOUIL, BLETTES AU CÉLERI, SARRASIN AUX HERBES(43956)',
+  Decimal('108.79000')],
+ ['Woluwe', '(52841)', Decimal('106.95580')],
+ ['Woluwe', 'CHIPS LEGUMES 100G(18889)', Decimal('106.70000')],
+ ['Woluwe',
+  'NOUILLES SAUTEES/ LEGUMES CROQUANTS / SOJA /SCAMPIS(52793)',
+  Decimal('106.68800')],
+ ['Woluwe', 'PAVLOVA FRUITS ROUGES (40975)', Decimal('105.0000000')],
+ ['Woluwe', 'BUTTER CHICKEN(55574)', Decimal('104.53020')],
+ ['Woluwe',
+  '2 - 5P FILET DE DAURADE AUX GRAINES DE MOUTARDE, SAUCE À L’ESTRAGON, ÉPINARDS ET CHAMPIGNONS DE PARIS SAUTÉS À L’ÉCHALOTE, PURÉE AUX POIREAUX. (GF)(43976)',
+  Decimal('104.28000')],
+ ['Woluwe',
+  '1 - 1P FILET DE DAURADE EN CROÛTE D’HERBES, SAUCE AUX ÉPINARDS, CÉLERI-RAVE, PETITS POIS ET OIGNONS GRILLÉS, POMMES DE TERRE GRENAILLE AU GROS SEL ET ROMARIN.(43843)',
+  Decimal('104.28000')],
+ ['Woluwe',
+  '1 - 4P PAIN DE VIANDE (100%HACHÉ DE VOLAILLE), SAUCE BRUNE À LA MOUTARDE, BLETTES GRILLÉES À L’AIL, QUARTIERS DE POMMES DE TERRE AU PERSIL PLAT(43846)',
+  Decimal('104.28000')],
+ ['Woluwe',
+  'SPAGHETTI A LA SAUCE BOLOGNAISE VEGAN 550G(56447)',
+  Decimal('104.28000')],
+ ['Woluwe',
+  '2 - 4P TAJINE DE POULARDE AU CITRON, COURGETTES, CORIANDRE ET RAISINS, SEMOULE AUX HERBES VERTES(43975)',
+  Decimal('104.28000')],
+ ['Woluwe',
+  '2 - 10P  STEAK DE CÉLERI-RAVE ET POIS CHICHES GRILLÉS, OIGNONS, SIROP D’ÉRABLE, THYM, RICOTTA ET NOIX. (GF)(V)(43987)',
+  Decimal('104.28000')],
+ ['Woluwe', 'BROCOLI AUX NOIX(49420)', Decimal('104.01300')],
+ ['Woluwe',
+  'VELOUTE DE CHOU-FLEUR DU BARRY (1L)(38567)',
+  Decimal('104.0000000')],
+ ['Woluwe', 'POTAGE THAI CITRONNELLE 1L(37731)', Decimal('104.0000000')],
+ ['Woluwe', 'BOEUF STROGANOFF(56179)', Decimal('102.47940')],
+ ['Woluwe', 'COCKTAIL 4 PCS FINGERFOOD(53067)', Decimal('102.00000')],
+ ['Woluwe', 'LEGUMES FARCIS(40761)', Decimal('101.7020000')],
+ ['Woluwe',
+  'PAIN BUFFET CAMPAGNE (POCHON) 1,1KG(51407)',
+  Decimal('101.20000')],
+ ['Woluwe', 'TIRAMISU MARRONS 110G(40742)', Decimal('99.20000')],
+ ['Woluwe', 'DIPS GUACAMOLE 250G(53649)', Decimal('97.56000')],
+ ['Woluwe', 'TAJINE AGNEAU + ACC(36595)', Decimal('94.80000')],
+ ['Woluwe', 'CROQUETTE CREVETTE (2 PIECES)(19968)', Decimal('94.8000000')],
+ ['Woluwe',
+  '1 - 8P FILET DE SAUMON, MOUSSELINE AUX C PRES, ÉPINARDS, PETITS POIS ET OIGNONS AU GINGEMBRE, POMMES DE TERRE EN PERSILLADE. (GF)(43850)',
+  Decimal('94.80000')],
+ ['Woluwe',
+  'SCAMPIS SAUCE VIN BLANC JARDINIERE ET PUREE(19331)',
+  Decimal('94.80000')],
+ ['Woluwe',
+  'DEMI FAISAN SAUVAGE / SAUCE LÉGÈREMENT CRÉMÉE AUX CHICONS (Gluten Free)(34790)',
+  Decimal('94.50000')],
+ ['Woluwe', "NAVARIN D'AGNEAU(51380)", Decimal('93.42720')],
+ ['Woluwe', 'HOMEMADE PATE 350G(56228)', Decimal('93.10000')],
+ ['Woluwe',
+  'POIS CHICHES GRILLES AU RIZ NOIR / MISO / GRAINE DE SESAME(56139)',
+  Decimal('92.96280')],
+ ['Woluwe', 'RIZ AU LAIT SPECULOOS 150G(40741)', Decimal('92.80000')],
+ ['Woluwe', 'RIZ CONDE ABRICOT 400G(19696)', Decimal('90.00000')],
+ ['Woluwe', 'RIZ AU LAIT NATURE 450G(19796)', Decimal('89.70000')],
+ ['Woluwe', 'SANDWICH CESAR GD (POULET)(20055)', Decimal('89.10000')],
+ ['Woluwe',
+  'RISOTTO DE SARRASIN CHAMPIGNONS DE SAISON 400G(54409)',
+  Decimal('88.40000')],
+ ['Woluwe',
+  "FILET DE SAUMON EN CROUTE D'HERBES, SAUCE MOUSSELINE, PUREE AUX POIREAUX, CHICONS CONFITS 2PERS(56349)",
+  Decimal('88.40000')],
+ ['Woluwe', 'CHATEAU LA MARZELLE 75CL(55947)', Decimal('88.40000')],
+ ['Woluwe',
+  'TACCHINO / SALSA TONNATA / ANCHOIS / CAPRES(51977)',
+  Decimal('88.20000')],
+ ['Woluwe', 'POTAGE AU FENOUIL ET TOMATES 1L(38298)', Decimal('88.0000000')],
+ ['Woluwe',
+  'FILET DE BICHE / SAUCE GRAND VENEUR LÉGÈREMENT CRÉMÉE / AIRELLES(53164)',
+  Decimal('87.60000')],
+ ['Woluwe', 'BOULETTES SAUCE TOMATE(51551)', Decimal('87.5689800')],
+ ['Woluwe', 'CROQUETTE FROMAGE (2 PIECES)(19970)', Decimal('85.8800000')],
+ ['Woluwe',
+  '4 - 7P LASAGNA VERDE, RICOTTA ÉPINARDS, COURGETTES ET OIGNONS AU FOUR. (V)(43995)',
+  Decimal('85.32000')],
+ ['Woluwe',
+  '2 - 2P FILET DE DINDE« SLOW COOKED », JUS BRUN, POTIRON, AIRELLES ET OIGNONS CARAMÉLISÉS, SARRASIN AU CITRON ET PERSIL PLAT.(43972)',
+  Decimal('85.32000')],
+ ['Woluwe',
+  '2 - 14P MOUSSAKA (100% HACHÉ DE VOLAILLE, AUBERGINES, TOMATES,..)(43994)',
+  Decimal('85.32000')],
+ ['Woluwe',
+  '4 LAITS - 4 NOIRS MINIS MELOCAKES ARTISANAL(56017)',
+  Decimal('85.00000')],
+ ['Woluwe',
+  '4 BLANCS - 4 LAITS  MINIS MELOCAKES ARTISANAL(56016)',
+  Decimal('85.00000')],
+ ['Woluwe', 'DINDE FILET CUIT FARCI(18246)', Decimal('84.5928600')],
+ ['Woluwe', 'SABLE POIRE CREME AMANDE 4PERS(19718)', Decimal('84.50000')],
+ ['Woluwe',
+  'TARTE ABRICOTS ROTIS A LA CREME DE NOISETTE 4PERS(55483)',
+  Decimal('84.50000')],
+ ['Woluwe', 'SOUFFLE AU POIVRE NOIR 100G(20256)', Decimal('83.75000')],
+ ['Woluwe',
+  'BLANQUETTE DE VEAU AUX OIGNONS GRELOTS(51448)',
+  Decimal('83.06720')],
+ ['Woluwe',
+  'PAELLA VEGAN AUX LEGUMES DE SAISON(18767)',
+  Decimal('82.6098000')],
+ ['Woluwe', 'ASPERGES VERTES CUITES(51360)', Decimal('81.9072000')],
+ ['Woluwe', 'MACARONS 12PCS(19910)', Decimal('81.0000')],
+ ['Woluwe', 'POMMES  JONAGOLD / AIRELLES(51870)', Decimal('80.24660')],
+ ['Woluwe',
+  'ACC 2 : PUREE  DE POMMES DE TERRE HUILE DE TRUFFE ET CHAMPIGNONS DES BOIS(18849)',
+  Decimal('80.10000')],
+ ['Woluwe',
+  'VELOUTE TOMATES ET MINI BOULETTES 1/2L(40509)',
+  Decimal('80.0000000')],
+ ['Woluwe', 'POTAGE THAI POULET 1/2L(19580)', Decimal('80.0000')],
+ ['Woluwe', 'MERVEILLEUX AU LEMON CURD(51177)', Decimal('79.80000')],
+ ['Woluwe', 'PUREE BASILIC(55789)', Decimal('79.76800')],
+ ['Woluwe', 'CARRE VITELLO TONATO(54368)', Decimal('79.20000')],
+ ['Woluwe',
+  '1 - 4P MIJOTÉ DE POULARDE AUX CHAMPIGNONS, CAROTTES ET CÉLERI-RAVE GRILLÉS, PURÉE AUX OIGNONS(43933)',
+  Decimal('79.12000')],
+ ['Woluwe',
+  '1 - 3P SPAGHETTI DELLO SPORT (100% HACHÉ DE VOLAILLE, CAROTTES, CÉLERI, OIGNONS,..)(43931)',
+  Decimal('79.12000')],
+ ['Woluwe', 'VINAIGRETTE CIBOULETTE 250ML(34737)', Decimal('79.00000')],
+ ['Woluwe', 'FOIE GRAS OIE MI CUIT(18711)', Decimal('78.96000')],
+ ['Woluwe',
+  'FILET DINDE FARCI (HACHE 100% VOLAILLE) / CHAMPIGNONS DES BOIS(51806)',
+  Decimal('77.35680')],
+ ['Woluwe', 'CAVA M&amp;M MILLESIME 75CL(55950)', Decimal('76.80000')],
+ ['Woluwe',
+  'TERRINE CAILLEBOTTE CHEVRE / PISTOU (Tranche)(54505)',
+  Decimal('76.50000')],
+ ['Woluwe', 'COCA ZERO 50CL PET(52487)', Decimal('76.50000')],
+ ['Woluwe', 'TARAMA DE TRUITE 90g(52926)', Decimal('76.45000')],
+ ['Woluwe',
+  'DEMI FAISAN + SAUCE (1 PERS.) COMPTOIR(55587)',
+  Decimal('75.60000')],
+ ['Woluwe', 'NOEL : 1 SAPIN CHOCOLAT(38345)', Decimal('75.40000')],
+ ['Woluwe',
+  'TAJINE AGNEAU / LEGUMES DE SAISON / ABRICOTS(51377)',
+  Decimal('74.53440')],
+ ['Woluwe', 'CAP GRIS GRENACHE 75CL(50785)', Decimal('73.75000')],
+ ['Woluwe',
+  'MELOCAKES ARTISANAL AU CHOCOLAT NOIR (49406)',
+  Decimal('73.5000000')],
+ ['Woluwe', 'NEW YORK CHEESE LIGHT 145G(19851)', Decimal('72.5000000')],
+ ['Woluwe', 'POPCAKE SACHET 2PCS(20284)', Decimal('72.20000')],
+ ['Woluwe', 'BLINIS 16PCS 135g(37530)', Decimal('72.00000')],
+ ['Woluwe', 'RAVIOLI GORGONZOLA NOIX(40780)', Decimal('70.41060')],
+ ['Woluwe', 'POULET PILONS CUITS(18195)', Decimal('70.37826')],
+ ['Woluwe', 'SOUFFLE AU GROS SEL 100G(20257)', Decimal('70.35000')],
+ ['Woluwe', 'CHICON AU GRATIN(53081)', Decimal('70.33660')],
+ ['Woluwe', 'COQUELET LAQUE (2PCS)(40467)', Decimal('69.60000')],
+ ['Woluwe', 'TARAMA A LA TRUFFE 90G(52924)', Decimal('69.50000')],
+ ['Woluwe', 'NOEL : LES 3 BOULES CHOCOLAT(38219)', Decimal('69.30000')],
+ ['Woluwe',
+  '1 - 2P CHOU FARCI, JEUNES CAROTTES AU CÉLERI ET ÉCHALOTES, SEMOULE DE BLE AUX HERBES(43929)',
+  Decimal('69.23000')],
+ ['Woluwe',
+  'SEMOULE DE BLE AMANDES ET FRUITS SECS 400G(40764)',
+  Decimal('69.20000')],
+ ['Woluwe', 'BUITENVERWACHTING 75CL(50779)', Decimal('68.95000')],
+ ['Woluwe', 'POULET FILET KATSU(55567)', Decimal('68.87340')],
+ ['Woluwe', 'NOUILLE SAUTEE LEGUME CROQUANT(52446)', Decimal('68.4880200')],
+ ['Woluwe', 'MICHEL LYNCH BLANC 75CL(50782)', Decimal('67.75000')],
+ ['Woluwe',
+  'SALADE FREGOLA PANAIS CAROTTE AIRELLE(56142)',
+  Decimal('67.61720')],
+ ['Woluwe',
+  'SABLE MANGUE ET FRUIT DE LA PASSION 4PERS(56154)',
+  Decimal('67.60000')],
+ ['Woluwe', 'TARTE FROMAGE SPECULOOS 4PERS(19706)', Decimal('67.60000')],
+ ['Woluwe', 'None(53051)', Decimal('67.60000')],
+ ['Woluwe',
+  '4 - 9P ESCALOPE DE DINDE, EMMENTAL, LARD ET PARMESAN, CHAMPIGNONS DE PARIS SAUTÉS, BELLES DE FONTENAY AU GROS SEL ET ROMARIN. (GF)(43997)',
+  Decimal('66.36000')],
+ ['Woluwe', 'CAVA MVSA 20CL(53606)', Decimal('66.30000')],
+ ['Woluwe',
+  'MELOCAKES ARTISANAL AU CHOCOLAT LAIT(49405)',
+  Decimal('66.1500000')],
+ ['Woluwe',
+  'CHAPON DESOSSE FARCI CRU (PRIX/PERS.)(53172)',
+  Decimal('65.40000')],
+ ['Woluwe',
+  'BLANQUETTE DE VEAU AUX OIGNONS GRELOTS(51451)',
+  Decimal('65.15180')],
+ ['Woluwe',
+  'TAJINE DE POULARDE / CITRON / CORIANDRE / RAISINS(51436)',
+  Decimal('64.34160')],
+ ['Woluwe', 'POTAGE TOM KHA KAI POULET 1/2L(40850)', Decimal('64.0000000')],
+ ['Woluwe',
+  'BOULETTE VOLAILLE SAUCE TOMATE, LEGUMES PROVENCAUX ET PUREE NATURE (40816)',
+  Decimal('64.0000000')],
+ ['Woluwe', 'COULIS FRUITS ROUGES 250ML(19801)', Decimal('63.7000')],
+ ['Woluwe', 'PAIN MUESLI TRADITION 280G(51411)', Decimal('63.65000')],
+ ['Woluwe', 'VOL-AU-VENT(55485)', Decimal('63.60180')],
+ ['Woluwe', 'CAILLE DESOSSEE CUITE FOIE GRAS(34621)', Decimal('63.50000')],
+ ['Woluwe', 'FINANCIER 250G(55755)', Decimal('63.20000')],
+ ['Woluwe',
+  'DEMI HOMARD "BELLEVUE" / SAUCE TARTARE AUX HERBES / SALADE VERTE(50614)',
+  Decimal('63.20000')],
+ ['Woluwe', 'FINANCIER 250G(55545)', Decimal('63.20000')],
+ ['Woluwe', 'POTAGE TOM KHA KOONG SCAMPIS 1/2L(39082)', Decimal('63.0000000')],
+ ['Woluwe', 'HOMEMADE PATE 350G(56226)', Decimal('62.79000')],
+ ['Woluwe', 'RIZ AU LAIT 150G(19795)', Decimal('62.7000000')],
+ ['Woluwe', 'TIRAMISU SPECULOOS 400G(19781)', Decimal('62.50000')],
+ ['Woluwe', 'PAVLOVA POIRES ET SPECULOOS JETABLE(51861)', Decimal('61.20000')],
+ ['Woluwe',
+  "CHIA / LAIT DE COCO / COMPOTE DE FRUITD D'AUTOMNE(51809)",
+  Decimal('60.80000')],
+ ['Woluwe',
+  'CIVET DE MARCASSIN CUIT / SAUCE POIVRE VERT DE MADAGASCAR 300G -  (1 PERS.)(50099)',
+  Decimal('60.69000')],
+ ['Woluwe', 'CUPCAKE A LA PIECE(20468)', Decimal('60.00000')],
+ ['Woluwe', 'MOUSSE CHOCOLAT EN VASE(53166)', Decimal('60.0000000')],
+ ['Woluwe',
+  'DUO DE RAVIOLE OUVERTE DE GAMBAS / LAIT DE COCO / DUXELLES DE PETITS LEGUMES(34985)',
+  Decimal('59.60000')],
+ ['Woluwe', '8 NOIRS MINIS MELOCAKES ARTISANAL(55939)', Decimal('59.50000')],
+ ['Woluwe',
+  '4 BLANCS - 4 NOIRS MINIS MELOCAKES ARTISANAL(56015)',
+  Decimal('59.50000')],
+ ['Woluwe', 'PLAT DU JOUR 11.9(19321)', Decimal('59.50000')],
+ ['Woluwe',
+  '2 - 3P CHOUCROUTE GARNIE (KÄSSLER, FRANKFURTER, KIELBASSA), POMMES DE TERRE.(43986)',
+  Decimal('59.34000')],
+ ['Woluwe',
+  'CAILLE FARCIE AU FOIE GRAS + SAUCE (2PCS)(55446)',
+  Decimal('58.80000')],
+ ['Woluwe',
+  '1 - 6P HAUT DE CUISSE DE POULET DÉSOSSÉE, SAUCE BRUNE AU MISO, CÉLERI-RAVE ET POTIRON GRILLÉ AUX OIGNONS, PURÉE AUX CAROTTES RAS EL HANOUT.(43848)',
+  Decimal('56.88000')],
+ ['Woluwe',
+  '1 - 2P KORMA DE LÉGUMES DE SAISON AUX NOIX DE CAJOU, COUSCOUS AUX HERBES VERTES (V)(43844)',
+  Decimal('56.88000')],
+ ['Woluwe',
+  '1 - 7P CHICONS AU GRATIN, POMMES DE TERRE NATURE. (GF)(43849)',
+  Decimal('56.88000')],
+ ['Woluwe', 'NOEL : 1 SAPIN + 1 BOULE CHOCOLAT(38355)', Decimal('56.50000')],
+ ['Woluwe', 'None(51409)', Decimal('56.26000')],
+ ['Woluwe',
+  '1 - 4E POTAGE DE COURGETTES ET DE CRESSON. (GF)(V)(43832)',
+  Decimal('56.00000')],
+ ['Woluwe',
+  '1 - 12E POTAGE DE POIREAUX À LA NOIX DE MUSCADE. (GF)(V)(43840)',
+  Decimal('56.00000')],
+ ['Woluwe', 'CARRE TACCHINO TONATO AUX HERBES(54366)', Decimal('55.30000')],
+ ['Woluwe', 'BONBON OURS ACIDULE BOUTEILLE 370G(36762)', Decimal('55.20000')],
+ ['Woluwe', 'VINAIGRETTE CIBOULETTE 500ML(35032)', Decimal('54.6000')],
+ ['Woluwe',
+  'CREVETTES GEANTES / ECHALOTES / AIL(50608)',
+  Decimal('53.9440000')],
+ ['Woluwe',
+  'CIVET DE MARCASSIN / SAUCE AU POIVRE VERT DE MADAGASCAR (50619)',
+  Decimal('53.00260')],
+ ['Woluwe', 'POULET FERME CUIT(18146)', Decimal('52.73520')],
+ ['Woluwe',
+  'PAVLOVA AUX FRUITS ROUGES EN VERRE  (+ caution)(20519)',
+  Decimal('52.50000')],
+ ['Woluwe',
+  'CIVET DE MARCASSIN CUIT / SAUCE POIVRE VERT DE MADAGASCAR 600G -  (2 PERS.)(50098)',
+  Decimal('52.02000')],
+ ['Woluwe', 'None(52881)', Decimal('52.0000000')],
+ ['Woluwe',
+  '1 - 1E SALADE DE CÉLERI-RAVE, CHOU BLANC, CAROTTES, SÉSAME NOIR ET PIMENTS. (GF)(V)(43829)',
+  Decimal('51.80000')],
+ ['Woluwe', 'BIMI GOMAE(56130)', Decimal('51.57360')],
+ ['Woluwe', '8 LAITS MINIS MELOCAKES ARTISANAL(55940)', Decimal('51.00000')],
+ ['Woluwe',
+  '2 GAMBAS GRILLÉES / BOULGOUR AUX HERBES / SAUCE AU LAIT DE COCO ET AU CITRON / CHIMICHURRI(34769)',
+  Decimal('51.00000')],
+ ['Woluwe',
+  'TARTE CROUTE VANILLE ET CARAMEL 4PERS(38449)',
+  Decimal('50.70000')],
+ ['Woluwe', 'TARTE MISERABLE CITRON 4PERS(49896)', Decimal('50.70000')],
+ ['Woluwe', 'FEUILLETE POUR BOUCHEE A LA REINE(55743)', Decimal('50.70000')],
+ ['Woluwe', 'ABELARD HELOISE 75CL(50800)', Decimal('50.00000')],
+ ['Woluwe', 'LINGUINE SCAMPIS HERBES VERTES(51613)', Decimal('49.84560')],
+ ['Woluwe', 'BATONNET POULET CAJUN CUIT(51559)', Decimal('49.55080')],
+ ['Woluwe',
+  '1 - 6P GIGUE DE COCHON DE LAIT, JUS BRUN, CHOUX DE BRUXELLES AUX LARDONS, POMMES DE TERRE AU THYM(43936)',
+  Decimal('49.45000')],
+ ['Woluwe',
+  'SALADE THAI AUX SCAMPIS / CAROTTES / SOJA / POIVRONS(52977)',
+  Decimal('49.28000')],
+ ['Woluwe',
+  'BONBON SOURIS S/SUCRE BOUTEILLE 500G(36764)',
+  Decimal('48.30000')],
+ ['Woluwe',
+  '4 - 4E VELOUTÉ DE CAROTTES AU LAIT DE COCO. (GF)(V)(43965)',
+  Decimal('48.00000')],
+ ['Woluwe',
+  '2 - 6E  POTAGE TOMATE, FENOUIL ET LAIT DE COCO. (GF)(V)(43954)',
+  Decimal('48.00000')],
+ ['Woluwe', 'BOUILLON THAI TOMATE 1L(51191)', Decimal('48.00000')],
+ ['Woluwe',
+  'NAVARIN AGNEAU HARICOTS VERTS ET PDT(40815)',
+  Decimal('48.0000000')],
+ ['Woluwe', 'CHICKEN SOUP FOR THE SOUL 1L(38659)', Decimal('48.0000000')],
+ ['Woluwe',
+  'SUPREME DE POULET CUIT PERSILLADE CITRON(54471)',
+  Decimal('47.98080')],
+ ['Woluwe', 'LASAGNE VEGE(50588)', Decimal('47.4708000')],
+ ['Woluwe', 'MENU CHRISTMAS AT SEA(50050)', Decimal('47.40000')],
+ ['Woluwe', 'BOULETTE KEFTA RATA SEMOULE(19299)', Decimal('47.40000')],
+ ['Woluwe', 'ACC 2 : 600G PUREE(55453)', Decimal('47.40000')],
+ ['Woluwe', 'ACC 1 : 3 POMMES AIRELLES(55421)', Decimal('46.80000')],
+ ['Woluwe',
+  "DUO DE FOIE GRAS D'OIE / POIVRE CONCASSE / FRUITS DE SAISON (FIGUES - ABRICOTS - RAISINS)(53163)",
+  Decimal('45.80000')],
+ ['Woluwe', 'WATERZOOI DE POULET(51341)', Decimal('45.02400')],
+ ['Woluwe',
+  'CROQUETTES POMME DE TERRE FRAICHES 10 PCS(36705)',
+  Decimal('45.0000000')],
+ ['Woluwe', 'JUS DE FRUITS FRAIS 250 ML(55928)', Decimal('44.80000')],
+ ['Woluwe', 'JUS DE FRUITS FRAIS 250 ML(55927)', Decimal('44.80000')],
+ ['Woluwe', 'TERRINE DE LAPIN AUX NOIX(56223)', Decimal('44.5648000')],
+ ['Woluwe',
+  'MELOCAKES ARTISANAL AU CHOCOLAT BLANC(56019)',
+  Decimal('44.10000')],
+ ['Woluwe', 'MARCASSIN FILET CUIT(18242)', Decimal('43.8480')],
+ ['Woluwe', 'DIPS HOUMOUS (200g)(36779)', Decimal('43.40000')],
+ ['Woluwe', 'PAIN RUSTIQUE 450G(51410)', Decimal('43.40000')],
+ ['Woluwe', 'None(53720)', Decimal('42.0000000')],
+ ['Woluwe',
+  'PAVLOVA AUX POIRES ET SPECULOOS EN VERRE (+ caution)(53142)',
+  Decimal('42.00000')],
+ ['Woluwe', 'MINI KEFTA(51348)', Decimal('41.8132000')],
+ ['Woluwe', 'MENU JINGLE BELLS(34822)', Decimal('41.50000')],
+ ['Woluwe',
+  '3 - 9E SALADE DE QUINOA AUX POIS CHICHES, HARICOTS ROUGES ET ADZUKI, PERSIL PLAT.(43945)',
+  Decimal('40.70000')],
+ ['Woluwe', 'CREME BRULEE NATURE 130G(19861)', Decimal('40.60000')],
+ ['Woluwe',
+  'VELOUTE DE PATATES DOUCES AU LAIT DE COCO 1/2L(54513)',
+  Decimal('40.50000')],
+ ['Woluwe',
+  'CIVET DE BICHE / CHAMPIGNONS DES BOIS / MOUTARDE TIERENTEYN(50617)',
+  Decimal('40.38200')],
+ ['Woluwe',
+  '3 - 14E VELOUTÉ DE CHAMPIGNONS. (GF)(V)(44008)',
+  Decimal('40.00000')],
+ ['Woluwe', 'WATERZOOI DE POULET(51343)', Decimal('39.98560')],
+ ['Woluwe', 'HOMEMADE PATE 350G(56227)', Decimal('39.90000')],
+ ['Woluwe', '(51058)', Decimal('39.5000000')],
+ ['Woluwe',
+  'OSSO BUCO, LINGUINI AUX TOMATES ET ROQUETTE (40819)',
+  Decimal('39.5000000')],
+ ['Woluwe', 'SAUCE BOLOGNAISE(55514)', Decimal('38.68800')],
+ ['Woluwe',
+  '1/2 POULET, COMPOTE DE POMMES ET PUREE NATURE(40820)',
+  Decimal('38.4000000')],
+ ['Woluwe', 'DIPS : TARTARE AUX CAPRES (250g)(53778)', Decimal('37.94000')],
+ ['Woluwe',
+  '4 - 10P POULET MADRAS (MEDIUM HOT), COURGETTES ET PETITS POIS À L’ÉCHALOTE AU FOUR, RIZ BASMATI. (GF)(43998)',
+  Decimal('37.92000')],
+ ['Woluwe', 'COURGETTE + RATATOUILLE + SEM(19246)', Decimal('37.92000')],
+ ['Woluwe',
+  '2 - 3P CHOUCROUTE GARNIE (KÄSSLER, FRANKFURTER,KIELBASSA), POMMES DE TERRE(43974)',
+  Decimal('37.92000')],
+ ['Woluwe', 'PLAT DU JOUR 18,90(54459)', Decimal('37.80000')],
+ ['Woluwe', 'FILET PINTADEAU SLOW COOKED(53829)', Decimal('37.09440')],
+ ['Woluwe',
+  'SAUMON MI CUIT, SAUCE VIN BLANC, JARDINIERE DE LEGUMES ET PUREE BASILIC (40818)',
+  Decimal('37.0000000')],
+ ['Woluwe',
+  '3 - 11E SALADE DE LENTILLES NOIRES, EDAMAME, FETA ET GRAINES GRILLÉES. (V)(43950)',
+  Decimal('37.00000')],
+ ['Woluwe',
+  '4 - 7E SALADE DE LENTILLES VERTES DU PUY ET DUXELLES DE LÉGUMES. (GF)(V)(43973)',
+  Decimal('37.00000')],
+ ['Woluwe',
+  'LIVRAISON BXL COMMANDE INFERIEURE 100 EUROS(19486)',
+  Decimal('36.30000')],
+ ['Woluwe',
+  'BARRIERE FRERES - CHATEAU TRUQUET 75 CL(40476)',
+  Decimal('36.10000')],
+ ['Woluwe', 'POULET CUISSE CAJUN(51446)', Decimal('36.09224')],
+ ['Woluwe',
+  'POTAGE AUX POIREAUX ET NOIX DE MUSCADE 1/2L(50724)',
+  Decimal('36.0000000')],
+ ['Woluwe',
+  '1 - 2E VELOUTÉ DE POIVRONS DOUX. (GF)(V)(43830)',
+  Decimal('36.00000')],
+ ['Woluwe',
+  'FILET DE DINDE FARCI AU FRUIT HIVER CUIT (2 PERS.)(55450)',
+  Decimal('36.00000')],
+ ['Woluwe',
+  '1 - 8E POTAGE DE CHOU FLEUR AU CURRY DOUX. (GF)(V)(43836)',
+  Decimal('36.00000')],
+ ['Woluwe', 'SALADE TREVISE / CHICON(51415)', Decimal('35.67480')],
+ ['Woluwe', 'ACC 2 : 600G CHAMPIGNONS DES BOIS(55454)', Decimal('35.55000')],
+ ['Woluwe', 'PAIN VIANDE TRUFFE(51726)', Decimal('35.07840')],
+ ['Woluwe',
+  'COURGETTES FARCIES / COULIS DE TOMATES(51393)',
+  Decimal('34.54920')],
+ ['Woluwe', 'CANARD LAQUE(18305)', Decimal('33.63840')],
+ ['Woluwe',
+  'NOBLE LATE HARVEST NEDERBURG 37,5 CL(56162)',
+  Decimal('33.50000')],
+ ['Woluwe',
+  '2 - 9E SALADE VERTE PROTÉINÉE (LENTILLES, COURGETTE, EDAMAME,…)(43960)',
+  Decimal('33.30000')],
+ ['Woluwe',
+  '1 - 5E SALADE DE CHOU FLEUR GRILLÉ, RAISINS, NOIX ET PERSIL PLAT. (GF)(V)(43833)',
+  Decimal('33.30000')],
+ ['Woluwe', 'GIGUE DE COCHON DE LAIT (DESOSSE)(51518)', Decimal('32.91780')],
+ ['Woluwe', 'COQUELET FARCI CUIT COMPTOIR(38840)', Decimal('32.40000')],
+ ['Woluwe',
+  'PUREE DE POMMES DE TERRE / CELERI-RAVE(55795)',
+  Decimal('32.30200')],
+ ['Woluwe', 'VELOUTE POTIRON AU LAIT DE COCO 1L(44066)', Decimal('32.00000')],
+ ['Woluwe', 'POTAGE FENOUIL ET AZUKI 1L(56075)', Decimal('32.00000')],
+ ['Woluwe', 'BOUILLON AU MISO ET ENOKI 1L(52787)', Decimal('32.0000000')],
+ ['Woluwe', 'CHAMPIGNONS DES BOIS SAUTES(51533)', Decimal('31.96000')],
+ ['Woluwe', 'COFFRET FONTEYNE(56282)', Decimal('31.95000')],
+ ['Woluwe', 'DEMI HOMARD CHAUD ET SA GARNITURE(53429)', Decimal('31.60000')],
+ ['Woluwe', 'FINANCIER 250G(55546)', Decimal('31.60000')],
+ ['Woluwe', 'FINANCIER 250G(55891)', Decimal('31.60000')],
+ ['Woluwe', 'DEMI HOMARD COMPTOIR(55580)', Decimal('31.60000')],
+ ['Woluwe', 'FINANCIER 250G(56166)', Decimal('31.60000')],
+ ['Woluwe', 'VINAIGRETTE YOGHURT 250ML(18974)', Decimal('31.60000')],
+ ['Woluwe', 'FINANCIER 250G(55687)', Decimal('31.60000')],
+ ['Woluwe', 'CHIPS SHIITAKE 75G(43743)', Decimal('31.2500000')],
+ ['Woluwe', 'LINGUINI CHAMPIGNONS DES BOIS(39109)', Decimal('30.87360')],
+ ['Woluwe', 'ULTIMATE PARTY CLASSIC PRIX/PERS.(52272)', Decimal('30.00000')],
+ ['Woluwe',
+  'CIVET DE BICHE CUIT / CHAMPIGNONS DES BOIS / MOUTARDE TIERENTEYN 300G - (1 PERS.)(50097)',
+  Decimal('29.79000')],
+ ['Woluwe', 'ESCALOPE PANEE COMPTOIR(55944)', Decimal('29.68940')],
+ ['Woluwe',
+  '2 - 4P SAUCISSE DE VOLAILLE, JUS BRUN À LA MOUTARDE, POIRES AUX NOIX ET AU THYM, PURÉE DE CÉLERI-RAVE. (43988)',
+  Decimal('29.67000')],
+ ['Woluwe',
+  '4 - 11E SALADE VERTE PROTÉINÉE (LENTILLES, COURGETTE, EDAMAME, POIS CHICHES)(44003)',
+  Decimal('29.60000')],
+ ['Woluwe', 'BLANC DE POIREAUX / TAHINI(55642)', Decimal('29.55540')],
+ ['Woluwe', 'SAUCE VEGAN 500G(56448)', Decimal('29.25000')],
+ ['Woluwe',
+  'LEMONGRASS / RAISINS / CORIANDRE / CITRONNELLE(51459)',
+  Decimal('28.95480')],
+ ['Woluwe',
+  '1 - 13P ROGAN JOSH D’AGNEAU, DUXELLES DE LÉGUMES, ORZO ET PERSILLADE PIQUANTE(43855)',
+  Decimal('28.44000')],
+ ['Woluwe',
+  '1 - 11P LINGUINE AUX CHAMPIGNONS DES BOIS, SALSA TARTUFATA, PARMESAN. (V)(43853)',
+  Decimal('28.44000')],
+ ['Woluwe',
+  '1 - 5P BEIRUT CHICKPEA BALLS, SAUCE AU CURRY VERT, B TONNETS DE COURGETTES À  L’ÉCHALOTE, RIZ BASMATI AUX ÉPICES(43847)',
+  Decimal('28.44000')],
+ ['Woluwe', 'MIJOTE AGNEAU + RIZ(53759)', Decimal('28.44000')],
+ ['Woluwe', 'COOKIES CHOCOLAT BLANC CAJOU 4PCS(18972)', Decimal('28.40000')],
+ ['Woluwe',
+  '2 - 2E POTAGE DE CAROTTES AU LAIT DE COCO. (GF)(V)(43943)',
+  Decimal('28.00000')],
+ ['Woluwe',
+  '3 - 6E POTAGE DE POIREAUX ET NOIX DE MUSCADE. (GF)(V)(43937)',
+  Decimal('28.00000')],
+ ['Woluwe',
+  '4 - 14E VELOUTÉ DE POIVRONS JAUNES ET BASILIC. (GF)(V)(44007)',
+  Decimal('28.00000')],
+ ['Woluwe', 'BONBON MELI MELO 480G(36754)', Decimal('27.60000')],
+ ['Woluwe', 'BONBON SOURIS NOIRES BOUTEILLE 430G(36758)', Decimal('27.60000')],
+ ['Woluwe', 'BONBON OURS S/SUCRE BOUTEILLE 380G(36765)', Decimal('27.60000')],
+ ['Woluwe',
+  'DES DE POULET / LAIT DE COCO / SAUCE CURRY VERT(51498)',
+  Decimal('27.53940')],
+ ['Woluwe', 'MONT BLANC JETABLE(51591)', Decimal('27.20000')],
+ ['Woluwe',
+  'BLINIS 12PCS / ELBOT ET CREME DE RAIFORT(19594)',
+  Decimal('27.2000000')],
+ ['Woluwe', 'AUBERGINES FARCIES A LA LIBANAISE(55575)', Decimal('27.10260')],
+ ['Woluwe', 'DIPS TZATZIKI 250G(40314)', Decimal('27.10000')],
+ ['Woluwe', 'DIPS CREMA TONNATA 250G(54393)', Decimal('27.10000')],
+ ['Woluwe', 'FILET DE POULET SLOW COOKED(51478)', Decimal('26.97420')],
+ ['Woluwe', 'SALADE THAI POULET 400G(19110)', Decimal('26.9400000')],
+ ['Woluwe', 'LEGUMES / SALADES 21,7 EURO/KG(54420)', Decimal('26.51740')],
+ ['Woluwe',
+  'TERRINE DE FAISAN / CHAMPIGNONS DES BOIS(34759)',
+  Decimal('26.40000')],
+ ['Woluwe', 'GRANOLA DE SAISON 340G(55693)', Decimal('26.00000')],
+ ['Woluwe',
+  '1 - 11E SALADE DE FREEKEH, POTIRON, FETA, AIRELLES ET GRAINES GRILLÉES. (V)(43839)',
+  Decimal('25.90000')],
+ ['Woluwe',
+  '1 - 3E QUINOA AUX CAROTTES, RAISINS, TOMATES CERISE, GRAINES GRILLÉES ET HERBES VERTES. (V)(43831)',
+  Decimal('25.90000')],
+ ['Woluwe', 'JUS DE FRUITS FRAIS 250 ML(55926)', Decimal('25.60000')],
+ ['Woluwe', 'EL ARITZA TEMPRANILLO 75CL(55948)', Decimal('25.40000')],
+ ['Woluwe', 'TARTANA BODEGAS FARINA 75CL(55945)', Decimal('25.00000')],
+ ['Woluwe', 'TERRINE DE LIEVRE / NOIX / THYM(18658)', Decimal('24.47200')],
+ ['Woluwe',
+  'LIVRAISON BXL COMMANDE SUPERIEURE 100 EUROS(19455)',
+  Decimal('24.2000')],
+ ['Woluwe', 'SUPPLEMENT SALADE(34429)', Decimal('24.0000')],
+ ['Woluwe',
+  '2 - 14E VELOUTÉ DE TOMATES ET BASILIC. (GF)(V)(43968)',
+  Decimal('24.00000')],
+ ['Woluwe',
+  '2 - 8E MINESTRONE VERDE AUX LENTILLES. (GF)(V)(43958)',
+  Decimal('24.00000')],
+ ['Woluwe',
+  '3 - 12E POTAGE DE COURGETTES ET ÉPINARDS.(GF)(V)(43952)',
+  Decimal('24.00000')],
+ ['Woluwe',
+  'POTAGE MINESTRONE VERDE / LENTILLES (1L)(38586)',
+  Decimal('24.0000000')],
+ ['Woluwe', 'VELOUTÉ DE POTIRON(50258)', Decimal('24.00000')],
+ ['Woluwe', 'POTAGE TOMATE ET LAIT DE COCO(56168)', Decimal('24.00000')],
+ ['Woluwe',
+  'PLATEAU CRUDITES (GF) (V) (prix/pers)(19406)',
+  Decimal('24.00000')],
+ ['Woluwe', 'DESSERT EN VERRE (HORS CAUTION)(20249)', Decimal('23.2500000')],
+ ['Woluwe',
+  '3 GROSSES CREVETTES BODY PEEL / BOULGOUR AUX HERBES / SESAME(38801)',
+  Decimal('23.20000')],
+ ['Woluwe', 'MOUSSE CHOCOLAT DUO(51236)', Decimal('23.0000000')],
+ ['Woluwe', "POULET A L'ITALIENNE(53796)", Decimal('22.99836')],
+ ['Woluwe',
+  'NARCISSUS / TIRADITO DE THON - MARINADE AU SESAME, PIMENTS ET HERBES, TOMATES SECHEES ET CORIANDRE(54526)',
+  Decimal('22.80000')],
+ ['Woluwe', 'LINGUINI NATURE(40624)', Decimal('22.6226000')],
+ ['Woluwe', 'MINESTRONE (51762)', Decimal('22.5000000')],
+ ['Woluwe',
+  '4 - 13E SALADE DE CHOU BLANC ET WAKAMÉ, VINAIGRETTE WASABI.(GF)(V)(44005)',
+  Decimal('22.20000')],
+ ['Woluwe',
+  '4 - 3E TABOULÉ LIBANAIS, TOMATES ET HERBES VERTES. (V)(43963)',
+  Decimal('22.20000')],
+ ['Woluwe',
+  '4 - 5E SALADE DE PÂTES GRECQUES, OLIVES, TOMATES SÉCHÉES ET FETA. (V)(43969)',
+  Decimal('22.20000')],
+ ['Woluwe', 'BOUDIN BLANC / NOIR (19938)', Decimal('22.13042')],
+ ['Woluwe',
+  'FILET DE CABILLAUD / SAUCE MOUSSELINE / CREVETTES GRISES / PURÉE AUX POIREAUX / CHICONS CONFITS (Gluten Free)(34806)',
+  Decimal('22.10000')],
+ ['Woluwe', 'LINGUINE AUX LENTILLES ET LARDONS(54405)', Decimal('22.10000')],
+ ['Woluwe',
+  'TORTELLONI RICOTTA / EPINARD / CHAMPIGNONS DES BOIS(56150)',
+  Decimal('22.0116000')],
+ ['Woluwe', 'SALADE CREVETTES 450G(19072)', Decimal('21.9600000')],
+ ['Woluwe',
+  'ACC 1 : 2 POMMES AIRELLES / 2 CHICONS / 200 LEGUMES(55420)',
+  Decimal('21.86000')],
+ ['Woluwe', 'DIPS SAUCE CHERMOULAH 250G(53777)', Decimal('21.68000')],
+ ['Woluwe', 'STOEMP DE POIREAUX(55793)', Decimal('21.39000')],
+ ['Woluwe',
+  'HARICOTS PRINCESSES AUX OIGNONS SAUTES ET NOIX DE MUSCADE(50666)',
+  Decimal('21.29140')],
+ ['Woluwe', 'ECRASE DE PDT AU CITRON(34115)', Decimal('21.2476000')],
+ ['Woluwe',
+  'RISOTTO AUX FEUILLES DE CITRONNIER(18584)',
+  Decimal('21.1970000')],
+ ['Woluwe', 'BONBON BATON ACIDULE BOUTEILLE 340G(36761)', Decimal('20.70000')],
+ ['Woluwe', 'CRUDITE MINI(19956)', Decimal('20.7000000')],
+ ['Woluwe', 'BEURRE ARTISANAL DOUX 250G(39002)', Decimal('20.34000')],
+ ['Woluwe', 'COQUELET NATURE CUIT(18869)', Decimal('20.25000')],
+ ['Woluwe', 'CAILLE FARCIE CUITE + SAUCE(19160)', Decimal('20.10000')],
+ ['Woluwe', 'EAU PLATE 50CL(38497)', Decimal('20.0000000')],
+ ['Woluwe',
+  '1 - 10E VELOUTÉ DE BETTERAVE ROUGE. (GF)(V)(43838)',
+  Decimal('20.00000')],
+ ['Woluwe',
+  '4 - 6E POTAGE DE COURGETTES AUX ÉPINARDS. (GF)(V)(43971)',
+  Decimal('20.00000')],
+ ['Woluwe', 'SPAGHETTI BOLO (34385)', Decimal('19.8000')],
+ ['Woluwe',
+  '1 - 8P CHICONS AU GRATIN, PURÉE DE POMMES DE TERRE(43938)',
+  Decimal('19.78000')],
+ ['Woluwe',
+  '1 - 10P BOULETTE DE VOLAILLE, SAUCE BRUNE A LA MOUTARDE, CHOU-FLEUR A LA BECHAMEL, PURÉE NATURE.(43947)',
+  Decimal('19.78000')],
+ ['Woluwe', 'SALADE MESCLUN PARMESAN(35815)', Decimal('19.71060')],
+ ['Woluwe', 'COULIS FRUITS ROUGES 500ML(38102)', Decimal('19.7000000')],
+ ['Woluwe',
+  'TIRADITO DE THON ALBACORE / SESAME / PIMENTS(53785)',
+  Decimal('19.59200')],
+ ['Woluwe', 'MERINGUE(51577)', Decimal('19.5200000')],
+ ['Woluwe', 'GRANOLA 340G(19911)', Decimal('19.5000')],
+ ['Woluwe', 'WASABI PEAS 300G(20282)', Decimal('19.5000')],
+ ['Woluwe', 'SAC ISO FTK GRIS/BLANC(36594)', Decimal('19.5000000')],
+ ['Woluwe', 'SALADE BOULGOUR (18043)', Decimal('19.35640')],
+ ['Woluwe', 'SALADE CREVETTES(18093)', Decimal('18.9720000')],
+ ['Woluwe', 'TERRINE DE CANARD AU FOIE GRAS (50106)', Decimal('18.60000')],
+ ['Woluwe',
+  '2 - 3E SALADE DE CÉLERI-RAVE, CHOU BLANC ET CAROTTES AU SÉSAME NOIR ET PIMENTS. (GF)(V)(43946)',
+  Decimal('18.50000')],
+ ['Woluwe',
+  '2 - 7E SALADE DE PATES GRECQUES, OLIVES, TOMATES SÉCHÉES, ET FETA. (V)(43957)',
+  Decimal('18.50000')],
+ ['Woluwe',
+  '3 - 3E BOULGOUR, POIS CHICHES, EDAMAME, POTIRON GRILLÉ ET GRENADE. (V)(43930)',
+  Decimal('18.50000')],
+ ['Woluwe', 'COOKIE 1PCE(38737)', Decimal('18.1500000')],
+ ['Woluwe', 'BISQUE DE HOMARD 1/2L(19556)', Decimal('18.0000000')],
+ ['Woluwe', 'MIGNARDISE HARICOTS BLANCS(40397)', Decimal('18.0000000')],
+ ['Woluwe',
+  'POTAGE CHAMPIGNONS DES BOIS / CREME ALLEGEE 1L(44067)',
+  Decimal('18.0000000')],
+ ['Woluwe',
+  'SALADE DE PATES ORZO / TOMATES SECHEES / FETA 180G(51760)',
+  Decimal('18.0000000')],
+ ['Woluwe',
+  'SALADE DE POMMES DE TERRE / CIBOULETTE / OIGNONS(18645)',
+  Decimal('17.81040')],
+ ['Woluwe', '(53047)', Decimal('17.7840000')],
+ ['Woluwe',
+  'COQUELET CUIT PERSILLADE AU CITRON 2PCS(56152)',
+  Decimal('17.40000')],
+ ['Woluwe', 'WASABI NUTS PETIT POT(18875)', Decimal('17.10000')],
+ ['Woluwe', 'COOKIES CHOCOLAT NOIR 4PCS(51179)', Decimal('17.0400000')],
+ ['Woluwe', '8 BLANCS MINIS MELOCAKES ARTISANAL(56018)', Decimal('17.00000')],
+ ['Woluwe',
+  'SALADE DE QUINOA / POIS CHICHES / HARICOTS ROUGES / AZUKI / TOMATES SECHEES  / KALE(54493)',
+  Decimal('16.96940')],
+ ['Woluwe',
+  'TARTE GANACHE CHOCOLAT / CREME VANILLE ET ROCHER COCO 4PERS(53816)',
+  Decimal('16.90000')],
+ ['Woluwe',
+  'CELERI-RAVE / CHAMPIGNONS DES BOIS / STRACCIATELLA - 1 Pers.(56257)',
+  Decimal('16.60000')],
+ ['Woluwe', 'COOKIE CHOCOLAT NOIR 1PCE(51180)', Decimal('16.2800000')],
+ ['Woluwe', 'DIPS BABAGANOUSH 250G(53650)', Decimal('16.26000')],
+ ['Woluwe',
+  "COQUELET FARCI AUX FRUITS D'HIVER (2 PERS.)(51922)",
+  Decimal('16.20000')],
+ ['Woluwe',
+  'COQUELET FARCI TRUFFE AUX CHAMPIGNONS DES BOIS (2 PERS.)(51924)',
+  Decimal('16.20000')],
+ ['Woluwe',
+  'VELOUTE POTIRON AU LAIT DE COCO 1/2L (44065)',
+  Decimal('16.00000')],
+ ['Woluwe',
+  'VELOUTÉ DE POIVRONS DOUX / MASCARPONE (50735)',
+  Decimal('16.00000')],
+ ['Woluwe',
+  'POTAGE AUX CAROTTES / LAIT DE COCO (1/2L)(19575)',
+  Decimal('16.0000000')],
+ ['Woluwe', 'POTAGE DETOX POTIRON 1L(50713)', Decimal('16.00000')],
+ ['Woluwe',
+  '1 - 14E VELOUTÉ DE CÉLERI-RAVE. (GF)(V)(43842)',
+  Decimal('16.00000')],
+ ['Woluwe',
+  'COQUELET AU MIEL, SALADE VERTE, PDT AU SEL ET ROMARIN(40817)',
+  Decimal('16.0000000')],
+ ['Woluwe', '1 - 6E MINESTRONE. (GF)(V)(43834)', Decimal('16.00000')],
+ ['Woluwe', 'FIGUIERE MEDITERRANEE ROSE 75CL(55949)', Decimal('16.00000')],
+ ['Woluwe',
+  'VELOUTE DE POIVRONS JAUNES / BASILIC (1/2L)(55756)',
+  Decimal('16.00000')],
+ ['Woluwe',
+  'VELOUTE DE TOMATES AU BASILIC 1/2L(19569)',
+  Decimal('16.0000000')],
+ ['Woluwe',
+  '3 - 2E POTAGE DE CHOU FLEUR DU BARRY. (GF)(V)(43928)',
+  Decimal('16.00000')],
+ ['Woluwe',
+  'SALADE THAI AUX SCAMPIS / CAROTTES / SOJA / POIVRONS(52978)',
+  Decimal('16.00000')],
+ ['Woluwe', '2 - 4E VELOUTÉ DE CHICONS. (GF)(V)(43948)', Decimal('16.00000')],
+ ['Woluwe',
+  '3 - 8E CHICKEN SOUP FOR THE SOUL. (GF)(43942)',
+  Decimal('16.00000')],
+ ['Woluwe', 'UNION SQUARE CAFE NUTS 350G(50452)', Decimal('15.9000000')],
+ ['Woluwe', 'AMANDE GROS SEL ET THYM 350G(55766)', Decimal('15.90000')],
+ ['Woluwe',
+  'ACC 2 : 400G PUREE + 400G CHAMPIGNON DES BOIS(55452)',
+  Decimal('15.80000')],
+ ['Woluwe', 'VINAIGRETTE WASABI 250ML(18975)', Decimal('15.80000')],
+ ['Woluwe', 'VINAIGRETTE MIEL BALSAMIQUE 250ML(18987)', Decimal('15.80000')],
+ ['Woluwe',
+  'DIPS : CREME CARDAMOME / CITRON (180g)(36780)',
+  Decimal('15.60000')],
+ ['Woluwe',
+  'PAIN CIABATTA NATURE HUILE OLIVE 180G(51408)',
+  Decimal('15.60000')],
+ ['Woluwe',
+  '4 - 1E SALADE DE CÉLERI-RAVE, CHOU BLANC, CAROTTES, SÉSAME NOIR ET PIMENTS. (GF)(V)(43959)',
+  Decimal('14.80000')],
+ ['Woluwe', 'PARMESAN - COPEAU/RAPE(18671)', Decimal('14.7186000')],
+ ['Woluwe',
+  'SALADE POIS CHICHE LENTILLES VERTES LIME PIMENTS(55712)',
+  Decimal('14.36540')],
+ ['Woluwe',
+  'SALADE GRECQUE : TOMATES / CONCOMBRES / OLIVES / FETA(18001)',
+  Decimal('14.32200')],
+ ['Woluwe',
+  'BATONNET POULET CUIT LAQUE MIEL ET SOJA(54477)',
+  Decimal('14.09460')],
+ ['Woluwe', 'SAUCE COMPTOIR FROIDE(38022)', Decimal('14.06160')],
+ ['Woluwe', 'POTAGE DU JOUR A EMPORTER 7 EURO(35027)', Decimal('14.0000000')],
+ ['Woluwe', 'BRIOCHE(20062)', Decimal('13.9000000')],
+ ['Woluwe', 'PLAT DU JOUR 13.90(19319)', Decimal('13.90000')],
+ ['Woluwe', 'BONBON CITROS BOUTEILLE 340G(36752)', Decimal('13.80000')],
+ ['Woluwe', 'PUREE CHOU VERT LARDON(55801)', Decimal('13.77650')],
+ ['Woluwe', 'MONT MARRON JETABLE(51860)', Decimal('13.60000')],
+ ['Woluwe', 'BEURRE ARTISANAL SALE 250G(39003)', Decimal('13.56000')],
+ ['Woluwe',
+  'PUREE AUX CAROTTES / EPICES RAZ EL HANOUT(55791)',
+  Decimal('13.51100')],
+ ['Woluwe', 'SALADE TIKKA POULET 180G (51761)', Decimal('13.5000000')],
+ ['Woluwe', 'TERRINE DE CANARD AUX CERISES(55677)', Decimal('13.14800')],
+ ['Woluwe', 'GRANOLA DE SAISON 340G(55692)', Decimal('13.00000')],
+ ['Woluwe', 'HAMBURGER DE VOLAILLE / THYM(50730)', Decimal('12.54960')],
+ ['Woluwe', 'PDT GRENAILLE CITRON ET ORIGAN(55889)', Decimal('12.44100')],
+ ['Woluwe', 'TURDUCKEN CUIT(18333)', Decimal('12.34800')],
+ ['Woluwe',
+  'SARRASIN / HARICOTS ROUGES / POTIRON / SESAME ET PERSIL(56136)',
+  Decimal('12.19540')],
+ ['Woluwe',
+  'VELOUTE DE PATATES DOUCES AU LAIT DE COCO + ACC 1L(54530)',
+  Decimal('12.00000')],
+ ['Woluwe',
+  '4 - 10E VELOUTÉ DE CHAMPIGNONS DE PARIS AU THYM. (GF)(V)(43981)',
+  Decimal('12.00000')],
+ ['Woluwe', '4 - 8E MINESTRONE. (GF)(V)(43977)', Decimal('12.00000')],
+ ['Woluwe', 'MIGNARDISE AMANDAS DULCEY(33691)', Decimal('12.0000000')],
+ ['Woluwe', 'MIGNARDISE AMANDE GIANDUJA CACAO(33690)', Decimal('12.0000000')],
+ ['Woluwe',
+  'POTAGE AUX CHAMPIGNONS DES BOIS 1L (Gluten Free)(54532)',
+  Decimal('12.00000')],
+ ['Woluwe', 'VELOUTE POTIRON CREME 1/2L(19560)', Decimal('12.0000000')],
+ ['Woluwe', 'SAUCE JUS BRUN AU THYM 200ML(55464)', Decimal('11.70000')],
+ ['Woluwe', '(54453)', Decimal('11.50100')],
+ ['Woluwe', 'PETIT SAPIN SABLE(54541)', Decimal('11.50000')],
+ ['Woluwe',
+  '4 - 9E SALADE DE POTIRON GRILLÉ, CHÈVRE, FIGUES, NOIX ET GRENADE. (V)(43979)',
+  Decimal('11.10000')],
+ ['Woluwe', 'GRAND CIABATTA FTK 350G(38094)', Decimal('10.8000000')],
+ ['Woluwe', 'MONT BLANC EN VERRE (+ caution)(34091)', Decimal('10.50000')],
+ ['Woluwe', 'RAVIER GRANA PADANO COPEAU 150G(55757)', Decimal('10.05000')],
+ ['Woluwe',
+  'BOULETTES DE VOLAILLE AU CITRON / GINGEMBRE / PIMENTS(55555)',
+  Decimal('9.97920')],
+ ['Woluwe', 'TARTARE DE SAUMON AU WAKAME 200G(20221)', Decimal('9.95000')],
+ ['Woluwe',
+  '1 - 9P CUISSE DE POULET DÉSOSSÉE AU MISO ET CACAHUETES, CHICONS CONFITS AUX OIGNONS, POMMES DE TERRE AU ROMARIN. (43944)',
+  Decimal('9.89000')],
+ ['Woluwe', 'YAOURT BIO 212ML(56271)', Decimal('9.80000')],
+ ['Woluwe', 'KEFTA + SAUCE(51476)', Decimal('9.63560')],
+ ['Woluwe', 'CONFITURE FRAISE FTK(38888)', Decimal('9.5800000')],
+ ['Woluwe', '(53423)', Decimal('9.40000')],
+ ['Woluwe',
+  'POIS CHICHES GRILLES AU RIZ NOIR / MISO / GRAINE DE SESAME(56138)',
+  Decimal('9.33100')],
+ ['Woluwe', 'DOMODO PRIMITIVO 75CL(55952)', Decimal('9.15000')],
+ ['Woluwe', 'PLAT DU JOUR VEGE BOT(56033)', Decimal('9.00000')],
+ ['Woluwe', 'PLAT DU JOUR TGTG 9,90 EURO(53612)', Decimal('9.0000000')],
+ ['Woluwe', 'GLACE CHOCOLAT 500ML(40921)', Decimal('9.00000')],
+ ['Woluwe', 'VELOUTE CHAMPIGNONS DES BOIS 1/2L(38202)', Decimal('9.0000000')],
+ ['Woluwe', '(53113)', Decimal('8.79580')],
+ ['Woluwe', 'CACAHUETE MIEL CRANBERRY 200G(20255)', Decimal('8.70000')],
+ ['Woluwe',
+  'COQUELET CUIT PERSILLADE AU CITRON 1PCE(50728)',
+  Decimal('8.70000')],
+ ['Woluwe', 'CHIPS DE LEGUMES(51430)', Decimal('8.6000000')],
+ ['Woluwe', 'ACC 1 : 300G LEGUMES + 3 CHICONS(55423)', Decimal('8.60000')],
+ ['Woluwe', 'BAGUETTE A L ANCIENNE(52047)', Decimal('8.4000000')],
+ ['Woluwe', 'MERINGUE(51578)', Decimal('8.3840000')],
+ ['Woluwe', 'CRUNCHY ALMONDS 60G(55513)', Decimal('8.30000')],
+ ['Woluwe', 'AIRELLE MAISON 200G(19290)', Decimal('8.19000')],
+ ['Woluwe', 'AUBERGINES À LA PARMIGIANA(50590)', Decimal('8.0886')],
+ ['Woluwe',
+  'CUISSE DE POULET DESOSSEE CUITE AU MISO BLANC(44074)',
+  Decimal('8.06400')],
+ ['Woluwe',
+  'POTAGE BOUILLON POULE LEGUMES DE SAISON ET CURCUMA(39116)',
+  Decimal('8.00000')],
+ ['Woluwe', 'BOUILLON AU MISO ET ENOKI 1/2L(52765)', Decimal('8.0000000')],
+ ['Woluwe', 'POTAGE TOMATE ET LAIT DE COCO(56169)', Decimal('8.00000')],
+ ['Woluwe', 'POTAGE DETOX POTIRON 1/2L(50758)', Decimal('8.00000')],
+ ['Woluwe',
+  '4 - 2E VELOUTÉ DE CÉLERI-RAVE. (GF)(V)(43961)',
+  Decimal('8.00000')],
+ ['Woluwe', 'POTAGE AU FENOUIL ET TOMATES 1/2L(40680)', Decimal('8.0000000')],
+ ['Woluwe',
+  'POTAGE CHOU FLEUR/ COCO/ CITRONNELLE 1L(51190)',
+  Decimal('8.0000000')],
+ ['Woluwe', 'VELOUTE DE BETTERAVE 1L(56118)', Decimal('8.00000')],
+ ['Woluwe', 'POTAGE CREME PARMESAN 1L(39117)', Decimal('8.0000000')],
+ ['Woluwe', 'TARTARE DE SAUMON AU WAKAME 100G(55840)', Decimal('7.95000')],
+ ['Woluwe', 'VINAIGRETTE THAI 250ML(18977)', Decimal('7.90000')],
+ ['Woluwe', 'NOEL : 5 PETITES BOULES CHOCOLAT(38354)', Decimal('7.90000')],
+ ['Woluwe',
+  'VINAIGRETTE SESAME LEMON POMEGRANATE 250ML(54496)',
+  Decimal('7.90000')],
+ ['Woluwe', 'BICHE FILET CRU + BARDE(34095)', Decimal('7.84608')],
+ ['Woluwe', 'SACHET HEALTHY 150G(55968)', Decimal('7.80000')],
+ ['Woluwe', 'SAUCE VIN BLANC CREME 400ML(54563)', Decimal('7.80000')],
+ ['Woluwe',
+  'SAUCE BRUNE AIRELLES/THYM/TAMARIN 400ML(50132)',
+  Decimal('7.80000')],
+ ['Woluwe', 'SAUCE CREME POIVRE VERT 400ML(53420)', Decimal('7.80000')],
+ ['Woluwe',
+  'TACCHINO / SALSA TONNATA / ANCHOIS / CAPRES(18784)',
+  Decimal('7.7280000')],
+ ['Woluwe', 'CIABATTA 1/2 (PCE)(36492)', Decimal('7.7000000')],
+ ['Woluwe', 'COQ AU VIN : CUISSE(51515)', Decimal('7.51400')],
+ ['Woluwe',
+  'PORTOBELLO CHILI SIN CARNE RICOTTA PARMESAN(40760)',
+  Decimal('7.42560')],
+ ['Woluwe',
+  '2 - 11E SALADE DE LÉGUMES PROVENÇAUX, QUINOA, POIS CHICHES ET CHERMOULA. (GF)(V)(43964)',
+  Decimal('7.40000')],
+ ['Woluwe',
+  '1 - 7E BOULGOUR, POIS CHICHES, EDAMAME, POTIRON GRILLÉ ET GRENADE. (V)(43835)',
+  Decimal('7.40000')],
+ ['Woluwe', 'POTAGE DE POISSONS (1/2L)(40690)', Decimal('7.00000')],
+ ['Woluwe', 'BOL BRUSCHETTE NATURE(36809)', Decimal('6.90000')],
+ ['Woluwe', 'MONT MARRON EN VASE(40417)', Decimal('6.80000')],
+ ['Woluwe',
+  'SALADE LENTILLES NOIRES ET VERTES FETA PETITS POIS(55710)',
+  Decimal('6.77040')],
+ ['Woluwe', 'BUTTER CHICKEN(55573)', Decimal('6.32460')],
+ ['Woluwe',
+  'KORMA DE LEGUMES DE SAISON ET NOIX DE CAJOU(54461)',
+  Decimal('6.18800')],
+ ['Woluwe',
+  'CHAMPIGNONS DE PARIS SAUTES / OIGNONS / HUILE AU PAPRIKA / BASILIC(54426)',
+  Decimal('6.16200')],
+ ['Woluwe',
+  'SALADE FREGOLA PANAIS CAROTTE AIRELLE(54492)',
+  Decimal('6.11940')],
+ ['Woluwe', 'MIGNARDISE AMANDE GIANDUJA SUCRE(33689)', Decimal('6.0000000')],
+ ['Woluwe', 'MIGNARDISE GRAIN CAFE (38905)', Decimal('6.0000000')],
+ ['Woluwe', 'SACHET DE CUBERDON(19814)', Decimal('6.0000')],
+ ['Woluwe', 'BRU PETILLANTE PLASTIQUE 50 CL(19866)', Decimal('6.00000')],
+ ['Woluwe', 'None(51791)', Decimal('5.90000')],
+ ['Woluwe',
+  'COMPOTE DE POMMES / FRAISES / RHUBARBE 400G(19263)',
+  Decimal('5.85000')],
+ ['Woluwe',
+  'ESCALOPE DE DINDE / GRUYERE / LARD / PARMESAN(54414)',
+  Decimal('5.76000')],
+ ['Woluwe', 'WASABI PEAS 90G(20283)', Decimal('5.70000')],
+ ['Woluwe', 'SALADE FRUIT SAISON (18708)', Decimal('5.6922000')],
+ ['Woluwe',
+  'BOULETTES SAUCE BRUNE AUX PRUNES ET AIRELLES(55590)',
+  Decimal('5.61100')],
+ ['Woluwe', 'BATONNET POULET CUIT MISO CACAHUETE(51834)', Decimal('5.61080')],
+ ['Woluwe', 'ACC 1  :  2 POMMES AIRELLES(38073)', Decimal('5.2000000')],
+ ['Woluwe', 'CREMA TONNATA(52363)', Decimal('5.18700')],
+ ['Woluwe', 'GRUYERE/EMMENTAL(18673)', Decimal('5.03880')],
+ ['Woluwe', 'FENOUIL CELERI ET PDT(51483)', Decimal('5.03100')],
+ ['Woluwe', 'YAOURT BIO 212ML(56270)', Decimal('4.90000')],
+ ['Woluwe', 'SALADE QUINOA(18059)', Decimal('4.86080')],
+ ['Woluwe', 'PAVLOVA ON THE GO(38903)', Decimal('4.85000')],
+ ['Woluwe', 'CONFITURE ORANGE FTK(38890)', Decimal('4.7900000')],
+ ['Woluwe', 'CONFITURE CERISE FTK(38891)', Decimal('4.7900000')],
+ ['Woluwe', 'CONFITURE ABRICOT FTK(38892)', Decimal('4.7900000')],
+ ['Woluwe', 'CONFITURE FRAMBOISE FTK(38894)', Decimal('4.7900000')],
+ ['Woluwe', 'SABLE POIRE CREME AMANDE PORTION(19717)', Decimal('4.55000')],
+ ['Woluwe', 'MINI SATE POULET SAUCE CACAHUETE(18731)', Decimal('4.5319200')],
+ ['Woluwe', 'BOUILLON THAI (19122)', Decimal('4.5000')],
+ ['Woluwe',
+  'SALADE DE POMMES DE TERRE AU RAIFORT ET A LA CIBOULETTE(52984)',
+  Decimal('4.48880')],
+ ['Woluwe', 'COOKIE CHOCOLAT BLANC CAJOU 1PCE(18973)', Decimal('4.44000')],
+ ['Woluwe',
+  'SALADE FREGOLA PANAIS CAROTTE AIRELLE(54491)',
+  Decimal('4.38340')],
+ ['Woluwe', 'DIPS CREME DE RAIFORT 200G(54394)', Decimal('4.34000')],
+ ['Woluwe', 'SANDWICH SUEDOIS GD (SAUMON)(20053)', Decimal('4.25000')],
+ ['Woluwe', 'RIZ BASMATI NATURE(18583)', Decimal('4.16392')],
+ ['Woluwe',
+  'CANNELLONI BOLOGNAISE / TOMATES / CAROTTES / FENOUIL / OIGNONS(51540)',
+  Decimal('4.15480')],
+ ['Woluwe', 'HOMEMADE CRACKERS 100G(56106)', Decimal('4.15000')],
+ ['Woluwe', 'CHICKEN SOUP FOR THE SOUL 1/2L(40564)', Decimal('4.0000000')],
+ ['Woluwe', 'POTAGE LEGUMES DU MARCHE 1/2L(19544)', Decimal('4.0000000')],
+ ['Woluwe',
+  '4 - 12E BOUILLON THAÏ AUX DÉS DE TOMATES. (GF)(V)(44004)',
+  Decimal('4.00000')],
+ ['Woluwe',
+  '2 - 12E BOUILLON AU MISO ET ENOKI. (GF)(V)(43966)',
+  Decimal('4.00000')],
+ ['Woluwe',
+  '3 - 10E VELOUTÉ DE BETTERAVE ROUGE. (GF)(V)(43925)',
+  Decimal('4.00000')],
+ ['Woluwe', 'TARTARE DE DAURADE AU WAKAME 100G(56474)', Decimal('3.99000')],
+ ['Woluwe', 'VINAIGRETTE MOUTARDE 250ML(19202)', Decimal('3.95000')],
+ ['Woluwe', 'PAVLOVA FRUIT ROUGE(52139)', Decimal('3.9500000')],
+ ['Woluwe', 'VINAIGRETTE BUSABA 250ML(18985)', Decimal('3.95000')],
+ ['Woluwe', 'SAUCE GRAND VENEUR 200ML(50058)', Decimal('3.90000')],
+ ['Woluwe',
+  '2 - 5E  SALADE DE POIS CHICHES GRILLÉS, RIZ NOIR, MISO ET GRAINES DE SÉSAME. (V)(43951)',
+  Decimal('3.70000')],
+ ['Woluwe',
+  '1 - 13E SALADE DE FREGOLA, PANAIS, CAROTTES ET AIRELLES. (V)(43841)',
+  Decimal('3.70000')],
+ ['Woluwe',
+  '2 - 1E SALADE DE POTIRON, CHÈVRE, FIGUES ET NOIX, VINAIGRETTE À LA GRENADE. (GF)(V)(43940)',
+  Decimal('3.70000')],
+ ['Woluwe',
+  '1 - 9E SALADE DE CHOU BLANC ET WAKAMÉ, VINAIGRETTE AU WASABI. (GF)(V)(43837)',
+  Decimal('3.70000')],
+ ['Woluwe',
+  '3 - 13E SALADE DE CHOU BLANC ET WAKAMÉ, VINAIGRETTE WASABI. (GF)(V)(43955)',
+  Decimal('3.70000')],
+ ['Woluwe',
+  '3 - 7E TABOULÉ LIBANAIS AUX TOMATES ET HERBES VERTES. (V)(51271)',
+  Decimal('3.70000')],
+ ['Woluwe', 'BAGUETTE PARISIENNE(19870)', Decimal('3.6000')],
+ ['Woluwe', 'TIRAMISU SPECULOOS 110G(40976)', Decimal('3.5000000')],
+ ['Woluwe', 'MOUSSE CHOCOLAT 110G(40977)', Decimal('3.5000000')],
+ ['Woluwe', 'MOUSSE CHOCOLAT EN VERRE(40404)', Decimal('3.5000000')],
+ ['Woluwe', 'RAVIER GRANA PADANO MOULU 150G(55758)', Decimal('3.35000')],
+ ['Woluwe', 'ASSIETTE ARCOPAL ZELIE 20 CM(56039)', Decimal('3.00000')],
+ ['Woluwe', 'SAUCE ESTRAGON/DÉS DE TOMATE(51212)', Decimal('2.92500')],
+ ['Woluwe',
+  'SALADE RIZ SAUVAGE AUX AMANDES / HERBES(55624)',
+  Decimal('2.90780')],
+ ['Woluwe', 'BATONNETS DE COURGETTES ROTIS(55638)', Decimal('2.85980')],
+ ['Woluwe', 'COCA COLA REGULAR 33 CL(53300)', Decimal('2.80000')],
+ ['Woluwe', 'SALADE POULET AUX HERBES(18134)', Decimal('2.7150000')],
+ ['Woluwe', 'COCA NORMAL 20CL VERRE(34611)', Decimal('2.7000000')],
+ ['Woluwe', 'EAU PETILLANTE BRU 50CL TAKE OUT(52629)', Decimal('2.6000000')],
+ ['Woluwe', 'YAOURT BIO 212ML(56269)', Decimal('2.45000')],
+ ['Woluwe', 'YAOURT BIO 212ML(56268)', Decimal('2.45000')],
+ ['Woluwe', 'SAUCE CREME VIN BLANC / CITRON(52367)', Decimal('2.41800')],
+ ['Woluwe', 'COCA COLA (51766)', Decimal('2.0000000')],
+ ['Woluwe', 'COCA ZERO(51767)', Decimal('2.0000000')],
+ ['Woluwe', 'None(53271)', Decimal('1.6000000')],
+ ['Woluwe', 'SACHET HEALTHY 40G(55973)', Decimal('1.25000')],
+ ['Woluwe', 'ENCAISSEMENT POUR ATELIER(35119)', Decimal('1.0000')],
+ ['Woluwe', 'BRIOCHE TETE CUITE (40315)', Decimal('1.0000000')],
+ ['Woluwe', 'VENTE COMPTOIR FETE 6%(38404)', Decimal('0.00000')],
+ ['Woluwe', 'VENTE CAUTIONS FETE 0%(34700)', Decimal('0.00000')],
+ ['Woluwe', 'POINT DE FIDELITE(34721)', Decimal('0.0000')],
+ ['Woluwe', '(52850)', Decimal('-6.00000')],
+ ['Woluwe',
+  "DINDONNEAU FARCI AUX FRUITS D'HIVER / JUS BRUN LEGEREMENT CREME (4 PERS.)(54536)",
+  Decimal('-54.80000')],
+ ['Woluwe', 'CAUTION VERRE 6CM(19937)', Decimal('-118.00000')],
+ ['Woluwe', 'CAUTION VERRINE/JATTE(19939)', Decimal('-165.5000000')],
+ ['Woluwe', 'CAUTION VASE DONAU GRAND 35 CM(19941)', Decimal('-350.0000000')],
+ ['Woluwe', 'CAUTION VASE DONAU PETIT 18 CM(19943)', Decimal('-560.0000000')],
+ ['Woluwe', 'Discount(20548)', Decimal('-853.62000')],
+ ['Woluwe', 'CAUTION VASE DONAU MOYEN 28 CM(19942)', Decimal('-1785.0000000')]]</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_last_week_best_selling_products(shops<span class="op">=</span>[]):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    today <span class="op">=</span> datetime.datetime.now().date()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    start_date <span class="op">=</span> (today <span class="op">-</span> datetime.timedelta(days<span class="op">=</span><span class="dv">7</span>)).strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st">"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    end_date <span class="op">=</span> today.strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st">"</span>)    </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> get_best_selling_products(start_date, end_date, shops)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>display_top_selling_products_per_column(shops<span class="op">=</span>[<span class="st">'Fort Jaco'</span>,<span class="st">'Wemmel'</span>,<span class="st">'La Hulpe'</span>,<span class="st">'CHATELAIN'</span>,<span class="st">'Woluwe'</span>, <span class="st">'LATEM'</span>], top_n<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_13e20_row0_col0 {
+  background-color: #0d071399;
+}
+#T_13e20_row0_col1, #T_13e20_row0_col5, #T_13e20_row3_col6, #T_13e20_row5_col2, #T_13e20_row7_col4, #T_13e20_row10_col3 {
+  background-color: #07b55999;
+}
+#T_13e20_row0_col2, #T_13e20_row0_col3, #T_13e20_row0_col6, #T_13e20_row2_col5, #T_13e20_row5_col1 {
+  background-color: #ab213599;
+}
+#T_13e20_row0_col4 {
+  background-color: #32560e99;
+}
+#T_13e20_row1_col0 {
+  background-color: #1a0e2699;
+}
+#T_13e20_row1_col1, #T_13e20_row1_col5, #T_13e20_row6_col2, #T_13e20_row6_col3, #T_13e20_row14_col4 {
+  background-color: #be7a0299;
+}
+#T_13e20_row1_col2, #T_13e20_row3_col3, #T_13e20_row6_col5, #T_13e20_row10_col6 {
+  background-color: #2c045499;
+}
+#T_13e20_row1_col3, #T_13e20_row11_col2, #T_13e20_row13_col5, #T_13e20_row15_col6 {
+  background-color: #9bf14599;
+}
+#T_13e20_row1_col4, #T_13e20_row16_col0 {
+  background-color: #dd774399;
+}
+#T_13e20_row1_col6, #T_13e20_row4_col2, #T_13e20_row8_col3, #T_13e20_row8_col5, #T_13e20_row9_col2, #T_13e20_row10_col4, #T_13e20_row13_col4, #T_13e20_row14_col1, #T_13e20_row16_col6, #T_13e20_row18_col5 {
+  background-color: #e2665e99;
+}
+#T_13e20_row2_col0 {
+  background-color: #27153999;
+}
+#T_13e20_row2_col1, #T_13e20_row3_col4, #T_13e20_row17_col3 {
+  background-color: #3090d099;
+}
+#T_13e20_row2_col2, #T_13e20_row2_col3, #T_13e20_row3_col5, #T_13e20_row9_col6, #T_13e20_row15_col4 {
+  background-color: #cf0d9199;
+}
+#T_13e20_row2_col4 {
+  background-color: #7705e999;
+}
+#T_13e20_row2_col6, #T_13e20_row11_col1, #T_13e20_row18_col2 {
+  background-color: #1682aa99;
+}
+#T_13e20_row3_col0 {
+  background-color: #341c4c99;
+}
+#T_13e20_row3_col1, #T_13e20_row4_col6, #T_13e20_row6_col4, #T_13e20_row17_col5 {
+  background-color: #74dc0c99;
+}
+#T_13e20_row3_col2 {
+  background-color: #70509099;
+}
+#T_13e20_row4_col0 {
+  background-color: #41235f99;
+}
+#T_13e20_row4_col1, #T_13e20_row9_col1, #T_13e20_row9_col5, #T_13e20_row12_col6, #T_13e20_row13_col6 {
+  background-color: #ee0ad299;
+}
+#T_13e20_row4_col3, #T_13e20_row4_col4, #T_13e20_row6_col1, #T_13e20_row7_col2 {
+  background-color: #cce4b499;
+}
+#T_13e20_row4_col5, #T_13e20_row5_col3, #T_13e20_row10_col1 {
+  background-color: #7eba4299;
+}
+#T_13e20_row5_col0 {
+  background-color: #4e2a7299;
+}
+#T_13e20_row5_col4 {
+  background-color: #ca1e7699;
+}
+#T_13e20_row5_col5 {
+  background-color: #1d370399;
+}
+#T_13e20_row5_col6 {
+  background-color: #6d27b399;
+}
+#T_13e20_row6_col0 {
+  background-color: #5b318599;
+}
+#T_13e20_row6_col6, #T_13e20_row12_col3, #T_13e20_row19_col5 {
+  background-color: #12f62e99;
+}
+#T_13e20_row7_col0 {
+  background-color: #68389899;
+}
+#T_13e20_row7_col1 {
+  background-color: #3d97e399;
+}
+#T_13e20_row7_col3 {
+  background-color: #78688899;
+}
+#T_13e20_row7_col5 {
+  background-color: #e3c9fd99;
+}
+#T_13e20_row7_col6, #T_13e20_row8_col2, #T_13e20_row10_col5 {
+  background-color: #4f8d1199;
+}
+#T_13e20_row8_col0 {
+  background-color: #753fab99;
+}
+#T_13e20_row8_col1 {
+  background-color: #6cc41499;
+}
+#T_13e20_row8_col4, #T_13e20_row9_col3, #T_13e20_row14_col2 {
+  background-color: #6e8a5299;
+}
+#T_13e20_row8_col6, #T_13e20_row17_col1, #T_13e20_row19_col3 {
+  background-color: #43e99d99;
+}
+#T_13e20_row9_col0 {
+  background-color: #8246be99;
+}
+#T_13e20_row9_col4, #T_13e20_row15_col3, #T_13e20_row16_col2, #T_13e20_row18_col1, #T_13e20_row19_col0 {
+  background-color: #048c7c99;
+}
+#T_13e20_row10_col0 {
+  background-color: #8f4dd199;
+}
+#T_13e20_row10_col2 {
+  background-color: #57a50999;
+}
+#T_13e20_row11_col0 {
+  background-color: #9c54e499;
+}
+#T_13e20_row11_col3 {
+  background-color: #8eea3299;
+}
+#T_13e20_row11_col4, #T_13e20_row12_col1, #T_13e20_row12_col5, #T_13e20_row15_col2 {
+  background-color: #8a5eb699;
+}
+#T_13e20_row11_col5 {
+  background-color: #943cec99;
+}
+#T_13e20_row11_col6 {
+  background-color: #c2067e99;
+}
+#T_13e20_row12_col0 {
+  background-color: #a95bf799;
+}
+#T_13e20_row12_col2, #T_13e20_row16_col3, #T_13e20_row16_col5 {
+  background-color: #ae4a1299;
+}
+#T_13e20_row12_col4 {
+  background-color: #2d67f399;
+}
+#T_13e20_row13_col0 {
+  background-color: #b6620a99;
+}
+#T_13e20_row13_col1, #T_13e20_row19_col4 {
+  background-color: #22261e99;
+}
+#T_13e20_row13_col2 {
+  background-color: #5808a899;
+}
+#T_13e20_row13_col3, #T_13e20_row14_col5, #T_13e20_row14_col6 {
+  background-color: #0652ba99;
+}
+#T_13e20_row14_col0 {
+  background-color: #c3691d99;
+}
+#T_13e20_row14_col3 {
+  background-color: #b2d68e99;
+}
+#T_13e20_row15_col0 {
+  background-color: #d0703099;
+}
+#T_13e20_row15_col1 {
+  background-color: #a8f85899;
+}
+#T_13e20_row15_col5 {
+  background-color: #151f0b99;
+}
+#T_13e20_row16_col1 {
+  background-color: #53198d99;
+}
+#T_13e20_row16_col4 {
+  background-color: #fc748499;
+}
+#T_13e20_row17_col0 {
+  background-color: #ea7e5699;
+}
+#T_13e20_row17_col2 {
+  background-color: #2a3e1699;
+}
+#T_13e20_row17_col4 {
+  background-color: #33b9ad99;
+}
+#T_13e20_row17_col6 {
+  background-color: #493b5799;
+}
+#T_13e20_row18_col0 {
+  background-color: #f7856999;
+}
+#T_13e20_row18_col3 {
+  background-color: #61833f99;
+}
+#T_13e20_row18_col4 {
+  background-color: #96022a99;
+}
+#T_13e20_row18_col6 {
+  background-color: #a795b999;
+}
+#T_13e20_row19_col1 {
+  background-color: #b7c5a999;
+}
+#T_13e20_row19_col2 {
+  background-color: #55dfcb99;
+}
+#T_13e20_row19_col6 {
+  background-color: #d4fcac99;
+}
+</style>
+
+<table id="T_13e20" data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_13e20_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">rank</th>
+<th id="T_13e20_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Fort Jaco</th>
+<th id="T_13e20_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Wemmel</th>
+<th id="T_13e20_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">La Hulpe</th>
+<th id="T_13e20_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">CHATELAIN</th>
+<th id="T_13e20_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Woluwe</th>
+<th id="T_13e20_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">LATEM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_13e20_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_13e20_row0_col0" class="data row0 col0">1</td>
+<td id="T_13e20_row0_col1" class="data row0 col1">PAVLOVA AUX FRUITS ROUGES JETABLE(36501)</td>
+<td id="T_13e20_row0_col2" class="data row0 col2">LEGUMES / SALADES 21,7 EURO/KG(54420)</td>
+<td id="T_13e20_row0_col3" class="data row0 col3">LEGUMES / SALADES 21,7 EURO/KG(54420)</td>
+<td id="T_13e20_row0_col4" class="data row0 col4">DIVERS PIECE BALANCE(54437)</td>
+<td id="T_13e20_row0_col5" class="data row0 col5">PAVLOVA AUX FRUITS ROUGES JETABLE(36501)</td>
+<td id="T_13e20_row0_col6" class="data row0 col6">LEGUMES / SALADES 21,7 EURO/KG(54420)</td>
+</tr>
+<tr class="even">
+<td id="T_13e20_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_13e20_row1_col0" class="data row1 col0">2</td>
+<td id="T_13e20_row1_col1" class="data row1 col1">POULET AU ROMARIN (18191)</td>
+<td id="T_13e20_row1_col2" class="data row1 col2">PAVLOVA AUX FRUITS ROUGES EN VASE(19842)</td>
+<td id="T_13e20_row1_col3" class="data row1 col3">LOTTE EPICEE(51181)</td>
+<td id="T_13e20_row1_col4" class="data row1 col4">DIVERS POIDS BALANCE(53935)</td>
+<td id="T_13e20_row1_col5" class="data row1 col5">POULET AU ROMARIN (18191)</td>
+<td id="T_13e20_row1_col6" class="data row1 col6">TARTIFLETTE(57765)</td>
+</tr>
+<tr class="odd">
+<td id="T_13e20_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_13e20_row2_col0" class="data row2 col0">3</td>
+<td id="T_13e20_row2_col1" class="data row2 col1">GAMBAS GEANTES (50610)</td>
+<td id="T_13e20_row2_col2" class="data row2 col2">BAR EPICE(50689)</td>
+<td id="T_13e20_row2_col3" class="data row2 col3">BAR EPICE(50689)</td>
+<td id="T_13e20_row2_col4" class="data row2 col4">PLAT DU JOUR 10.9(19322)</td>
+<td id="T_13e20_row2_col5" class="data row2 col5">LEGUMES / SALADES 21,7 EURO/KG(54420)</td>
+<td id="T_13e20_row2_col6" class="data row2 col6">DOS DE CABILLAUD EPICE(53764)</td>
+</tr>
+<tr class="even">
+<td id="T_13e20_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_13e20_row3_col0" class="data row3 col0">4</td>
+<td id="T_13e20_row3_col1" class="data row3 col1">ASPERGE VERTE ET SUGAR SNAPS (40762)</td>
+<td id="T_13e20_row3_col2" class="data row3 col2">WHOLE MONTH (1PERS)(36743)</td>
+<td id="T_13e20_row3_col3" class="data row3 col3">PAVLOVA AUX FRUITS ROUGES EN VASE(19842)</td>
+<td id="T_13e20_row3_col4" class="data row3 col4">GAMBAS GEANTES (50610)</td>
+<td id="T_13e20_row3_col5" class="data row3 col5">BAR EPICE(50689)</td>
+<td id="T_13e20_row3_col6" class="data row3 col6">PAVLOVA AUX FRUITS ROUGES JETABLE(36501)</td>
+</tr>
+<tr class="odd">
+<td id="T_13e20_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_13e20_row4_col0" class="data row4 col0">5</td>
+<td id="T_13e20_row4_col1" class="data row4 col1">TIRADITO DE SAUMON / SESAME / PIMENTS(53784)</td>
+<td id="T_13e20_row4_col2" class="data row4 col2">TARTIFLETTE(57765)</td>
+<td id="T_13e20_row4_col3" class="data row4 col3">SCAMPIS / OIGNONS / TOMATES SECHEES(50615)</td>
+<td id="T_13e20_row4_col4" class="data row4 col4">SCAMPIS / OIGNONS / TOMATES SECHEES(50615)</td>
+<td id="T_13e20_row4_col5" class="data row4 col5">COQUELET CUIT + SAUCE COMPTOIR(55577)</td>
+<td id="T_13e20_row4_col6" class="data row4 col6">ASPERGE VERTE ET SUGAR SNAPS (40762)</td>
+</tr>
+<tr class="even">
+<td id="T_13e20_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_13e20_row5_col0" class="data row5 col0">6</td>
+<td id="T_13e20_row5_col1" class="data row5 col1">LEGUMES / SALADES 21,7 EURO/KG(54420)</td>
+<td id="T_13e20_row5_col2" class="data row5 col2">PAVLOVA AUX FRUITS ROUGES JETABLE(36501)</td>
+<td id="T_13e20_row5_col3" class="data row5 col3">COQUELET CUIT + SAUCE COMPTOIR(55577)</td>
+<td id="T_13e20_row5_col4" class="data row5 col4">TOMATE CREVETTES GRISES(18655)</td>
+<td id="T_13e20_row5_col5" class="data row5 col5">SALADE GO GREEN SUCRINE / HARICOTS VERTS / COURGETTES / EDAMAME / AVOCATS(52986)</td>
+<td id="T_13e20_row5_col6" class="data row5 col6">HOT BAR FTK(57206)</td>
+</tr>
+<tr class="odd">
+<td id="T_13e20_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_13e20_row6_col0" class="data row6 col0">7</td>
+<td id="T_13e20_row6_col1" class="data row6 col1">SCAMPIS / OIGNONS / TOMATES SECHEES(50615)</td>
+<td id="T_13e20_row6_col2" class="data row6 col2">POULET AU ROMARIN (18191)</td>
+<td id="T_13e20_row6_col3" class="data row6 col3">POULET AU ROMARIN (18191)</td>
+<td id="T_13e20_row6_col4" class="data row6 col4">ASPERGE VERTE ET SUGAR SNAPS (40762)</td>
+<td id="T_13e20_row6_col5" class="data row6 col5">PAVLOVA AUX FRUITS ROUGES EN VASE(19842)</td>
+<td id="T_13e20_row6_col6" class="data row6 col6">FILET DE BOEUF / CROUTE D'HERBES / GRAINES DE MOUTARDE(40750)</td>
+</tr>
+<tr class="even">
+<td id="T_13e20_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_13e20_row7_col0" class="data row7 col0">8</td>
+<td id="T_13e20_row7_col1" class="data row7 col1">BUFFET DOLCE FARNIENTE (prix/pers)(19531)</td>
+<td id="T_13e20_row7_col2" class="data row7 col2">SCAMPIS / OIGNONS / TOMATES SECHEES(50615)</td>
+<td id="T_13e20_row7_col3" class="data row7 col3">MELI MELO HARICOTS VERTS ET BEURRE(40768)</td>
+<td id="T_13e20_row7_col4" class="data row7 col4">PAVLOVA AUX FRUITS ROUGES JETABLE(36501)</td>
+<td id="T_13e20_row7_col5" class="data row7 col5">SUPREME DE POULET / STRACCIATELLA DI BUFALA / CHAMPIGNONS / ESTRAGON(55643)</td>
+<td id="T_13e20_row7_col6" class="data row7 col6">POMMES DE TERRE AU PARMESAN(50645)</td>
+</tr>
+<tr class="odd">
+<td id="T_13e20_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_13e20_row8_col0" class="data row8 col0">9</td>
+<td id="T_13e20_row8_col1" class="data row8 col1">PAIN DE VIANDE NATURE(51722)</td>
+<td id="T_13e20_row8_col2" class="data row8 col2">POMMES DE TERRE AU PARMESAN(50645)</td>
+<td id="T_13e20_row8_col3" class="data row8 col3">TARTIFLETTE(57765)</td>
+<td id="T_13e20_row8_col4" class="data row8 col4">LEGUMES / SALADES 24,7 EURO/KG(54419)</td>
+<td id="T_13e20_row8_col5" class="data row8 col5">BELLES DE FONTENAY / GROS SEL / ROMARIN(18602)</td>
+<td id="T_13e20_row8_col6" class="data row8 col6">JARDINIERE LEGUMES MARCHE / AIL / HERBES / CITRON(18521)</td>
+</tr>
+<tr class="even">
+<td id="T_13e20_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_13e20_row9_col0" class="data row9 col0">10</td>
+<td id="T_13e20_row9_col1" class="data row9 col1">PLAT DU JOUR 9.9 COMPTOIR(34712)</td>
+<td id="T_13e20_row9_col2" class="data row9 col2">BELLES DE FONTENAY / GROS SEL / ROMARIN(18602)</td>
+<td id="T_13e20_row9_col3" class="data row9 col3">GET TOGETHER CLASSIC - PAIN SURPRISE(53070)</td>
+<td id="T_13e20_row9_col4" class="data row9 col4">LEGUMES PROVENCAUX(18517)</td>
+<td id="T_13e20_row9_col5" class="data row9 col5">TIRADITO DE SAUMON / SESAME / PIMENTS(53784)</td>
+<td id="T_13e20_row9_col6" class="data row9 col6">BAR EPICE(50689)</td>
+</tr>
+<tr class="odd">
+<td id="T_13e20_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_13e20_row10_col0" class="data row10 col0">11</td>
+<td id="T_13e20_row10_col1" class="data row10 col1">COQUELET CUIT + SAUCE COMPTOIR(55577)</td>
+<td id="T_13e20_row10_col2" class="data row10 col2">CIVET DE MARCASSIN / SAUCE AU POIVRE VERT DE MADAGASCAR (51521)</td>
+<td id="T_13e20_row10_col3" class="data row10 col3">PAVLOVA AUX FRUITS ROUGES JETABLE(36501)</td>
+<td id="T_13e20_row10_col4" class="data row10 col4">TARTIFLETTE(57765)</td>
+<td id="T_13e20_row10_col5" class="data row10 col5">POMMES DE TERRE AU PARMESAN(50645)</td>
+<td id="T_13e20_row10_col6" class="data row10 col6">PAVLOVA AUX FRUITS ROUGES EN VASE(19842)</td>
+</tr>
+<tr class="even">
+<td id="T_13e20_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_13e20_row11_col0" class="data row11 col0">12</td>
+<td id="T_13e20_row11_col1" class="data row11 col1">DOS DE CABILLAUD EPICE(53764)</td>
+<td id="T_13e20_row11_col2" class="data row11 col2">LOTTE EPICEE(51181)</td>
+<td id="T_13e20_row11_col3" class="data row11 col3">MAGRET DE CANARD EN SAUCE(40752)</td>
+<td id="T_13e20_row11_col4" class="data row11 col4">CHAMPIGNONS DES BOIS SAUTES(51532)</td>
+<td id="T_13e20_row11_col5" class="data row11 col5">SESAMISO CHICKEN TENDERS(56933)</td>
+<td id="T_13e20_row11_col6" class="data row11 col6">COQUELET LAQUE (1PCE)(40466)</td>
+</tr>
+<tr class="odd">
+<td id="T_13e20_level0_row12" class="row_heading level0 row12" data-quarto-table-cell-role="th">12</td>
+<td id="T_13e20_row12_col0" class="data row12 col0">13</td>
+<td id="T_13e20_row12_col1" class="data row12 col1">CHAMPIGNONS DES BOIS SAUTES(51532)</td>
+<td id="T_13e20_row12_col2" class="data row12 col2">SAUCE COMPTOIR CHAUDE(38021)</td>
+<td id="T_13e20_row12_col3" class="data row12 col3">FILET DE BOEUF / CROUTE D'HERBES / GRAINES DE MOUTARDE(40750)</td>
+<td id="T_13e20_row12_col4" class="data row12 col4">THON ALBACORE EPICE CUIT(18440)</td>
+<td id="T_13e20_row12_col5" class="data row12 col5">CHAMPIGNONS DES BOIS SAUTES(51532)</td>
+<td id="T_13e20_row12_col6" class="data row12 col6">TIRADITO DE SAUMON / SESAME / PIMENTS(53784)</td>
+</tr>
+<tr class="even">
+<td id="T_13e20_level0_row13" class="row_heading level0 row13" data-quarto-table-cell-role="th">13</td>
+<td id="T_13e20_row13_col0" class="data row13 col0">14</td>
+<td id="T_13e20_row13_col1" class="data row13 col1">PUREE NATURE 400G(19281)</td>
+<td id="T_13e20_row13_col2" class="data row13 col2">SAUMON MI-CUIT LAQUE AU SOJA / SESAME(40729)</td>
+<td id="T_13e20_row13_col3" class="data row13 col3">SAUMON MI CUIT EPICE(53011)</td>
+<td id="T_13e20_row13_col4" class="data row13 col4">BELLES DE FONTENAY / GROS SEL / ROMARIN(18602)</td>
+<td id="T_13e20_row13_col5" class="data row13 col5">LOTTE EPICEE(51181)</td>
+<td id="T_13e20_row13_col6" class="data row13 col6">FILET DE VEAU CUIT (40758)</td>
+</tr>
+<tr class="odd">
+<td id="T_13e20_level0_row14" class="row_heading level0 row14" data-quarto-table-cell-role="th">14</td>
+<td id="T_13e20_row14_col0" class="data row14 col0">15</td>
+<td id="T_13e20_row14_col1" class="data row14 col1">BELLES DE FONTENAY / GROS SEL / ROMARIN(18602)</td>
+<td id="T_13e20_row14_col2" class="data row14 col2">LEGUMES / SALADES 24,7 EURO/KG(54419)</td>
+<td id="T_13e20_row14_col3" class="data row14 col3">CAILLE DESOSSEE CUITE FOIE GRAS(34621)</td>
+<td id="T_13e20_row14_col4" class="data row14 col4">POULET AU ROMARIN (18191)</td>
+<td id="T_13e20_row14_col5" class="data row14 col5">SAUMON MI CUIT EPICE(53011)</td>
+<td id="T_13e20_row14_col6" class="data row14 col6">SAUMON MI CUIT EPICE(53011)</td>
+</tr>
+<tr class="even">
+<td id="T_13e20_level0_row15" class="row_heading level0 row15" data-quarto-table-cell-role="th">15</td>
+<td id="T_13e20_row15_col0" class="data row15 col0">16</td>
+<td id="T_13e20_row15_col1" class="data row15 col1">SALADE THAI(52963)</td>
+<td id="T_13e20_row15_col2" class="data row15 col2">CHAMPIGNONS DES BOIS SAUTES(51532)</td>
+<td id="T_13e20_row15_col3" class="data row15 col3">LEGUMES PROVENCAUX(18517)</td>
+<td id="T_13e20_row15_col4" class="data row15 col4">BAR EPICE(50689)</td>
+<td id="T_13e20_row15_col5" class="data row15 col5">CHICONS BRAISES / UNION SQUARE NUTS / OIGNONS(51524)</td>
+<td id="T_13e20_row15_col6" class="data row15 col6">LOTTE EPICEE(51181)</td>
+</tr>
+<tr class="odd">
+<td id="T_13e20_level0_row16" class="row_heading level0 row16" data-quarto-table-cell-role="th">16</td>
+<td id="T_13e20_row16_col0" class="data row16 col0">17</td>
+<td id="T_13e20_row16_col1" class="data row16 col1">FILET D'AGNEAU / CROUTES D'HERBES / GRAINES DE MOUTARDE(52808)</td>
+<td id="T_13e20_row16_col2" class="data row16 col2">LEGUMES PROVENCAUX(18517)</td>
+<td id="T_13e20_row16_col3" class="data row16 col3">SAUCE COMPTOIR CHAUDE(38021)</td>
+<td id="T_13e20_row16_col4" class="data row16 col4">PLAT DU JOUR 12.90(19320)</td>
+<td id="T_13e20_row16_col5" class="data row16 col5">SAUCE COMPTOIR CHAUDE(38021)</td>
+<td id="T_13e20_row16_col6" class="data row16 col6">BELLES DE FONTENAY / GROS SEL / ROMARIN(18602)</td>
+</tr>
+<tr class="even">
+<td id="T_13e20_level0_row17" class="row_heading level0 row17" data-quarto-table-cell-role="th">17</td>
+<td id="T_13e20_row17_col0" class="data row17 col0">18</td>
+<td id="T_13e20_row17_col1" class="data row17 col1">JARDINIERE LEGUMES MARCHE / AIL / HERBES / CITRON(18521)</td>
+<td id="T_13e20_row17_col2" class="data row17 col2">TARTARE DE SAUMON / SESAME NOIRE / WAKAME 400G (Gluten Free)(55885)</td>
+<td id="T_13e20_row17_col3" class="data row17 col3">GAMBAS GEANTES (50610)</td>
+<td id="T_13e20_row17_col4" class="data row17 col4">PLAT DU JOUR 11.9(19321)</td>
+<td id="T_13e20_row17_col5" class="data row17 col5">ASPERGE VERTE ET SUGAR SNAPS (40762)</td>
+<td id="T_13e20_row17_col6" class="data row17 col6">RADIATORI JAMBON FROMAGE 400G(53690)</td>
+</tr>
+<tr class="odd">
+<td id="T_13e20_level0_row18" class="row_heading level0 row18" data-quarto-table-cell-role="th">18</td>
+<td id="T_13e20_row18_col0" class="data row18 col0">19</td>
+<td id="T_13e20_row18_col1" class="data row18 col1">LEGUMES PROVENCAUX(18517)</td>
+<td id="T_13e20_row18_col2" class="data row18 col2">DOS DE CABILLAUD EPICE(53764)</td>
+<td id="T_13e20_row18_col3" class="data row18 col3">GET TOGETHER DELUXE - PAIN SURPRISE(20035)</td>
+<td id="T_13e20_row18_col4" class="data row18 col4">TARTARE DE SAUMON / SESAME NOIRE / WAKAME - 200G(43712)</td>
+<td id="T_13e20_row18_col5" class="data row18 col5">TARTIFLETTE(57765)</td>
+<td id="T_13e20_row18_col6" class="data row18 col6">WATERZOOI POISSON(51330)</td>
+</tr>
+<tr class="even">
+<td id="T_13e20_level0_row19" class="row_heading level0 row19" data-quarto-table-cell-role="th">19</td>
+<td id="T_13e20_row19_col0" class="data row19 col0">20</td>
+<td id="T_13e20_row19_col1" class="data row19 col1">SALADE TIKKA AU POULET / CONCOMBRE / VINAIGRETTE / WASABI (52973)</td>
+<td id="T_13e20_row19_col2" class="data row19 col2">POULPE A L'ITALIENNE(44072)</td>
+<td id="T_13e20_row19_col3" class="data row19 col3">JARDINIERE LEGUMES MARCHE / AIL / HERBES / CITRON(18521)</td>
+<td id="T_13e20_row19_col4" class="data row19 col4">PUREE NATURE 400G(19281)</td>
+<td id="T_13e20_row19_col5" class="data row19 col5">FILET DE BOEUF / CROUTE D'HERBES / GRAINES DE MOUTARDE(40750)</td>
+<td id="T_13e20_row19_col6" class="data row19 col6">TARTE MOELLEUX CHOCOLAT PORTION(19723)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fonteyne/foodcosts/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
